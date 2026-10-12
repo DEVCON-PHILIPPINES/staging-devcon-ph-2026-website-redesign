@@ -28,8 +28,8 @@ def page_html(mode):
         c = f'<figcaption>{cap or ""}{" <span class=\'kai-credit\'>" + credit + "</span>" if credit else ""}</figcaption>' if (cap or credit) else ''
         return f'<figure class="cs-fig {cls}"><img src="{M(f)}" alt="{alt}" loading="lazy"/>{c}</figure>'
     def short(vid, title, step, h, p):
-        return (f'<li class="kai-ep"><span class="kai-step">{step}</span><div class="yt-frame yt-frame--short"><iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0&amp;modestbranding=1" '
-                f'title="{title}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'
+        return (f'<li class="kai-ep"><span class="kai-step">{step}</span><div class="yt-frame yt-frame--short"><iframe src="https://www.youtube-nocookie.com/embed/{vid}?autoplay=1&amp;mute=1&amp;playsinline=1&amp;rel=0&amp;modestbranding=1" '
+                f'title="{title}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'
                 f'<b>{h}</b><span>{p}</span><a href="https://www.youtube.com/shorts/{vid}" target="_blank" rel="noopener">Watch on YouTube<span class="sr-only"> (opens in a new tab)</span></a></li>')
     def clip(f, h, p):
         return (f'<li><video poster="{M(f + ".jpg")}" muted loop playsinline autoplay preload="metadata" aria-label="{h}"><source src="{M(f + ".webm")}" type="video/webm"/><source src="{M(f + ".mp4")}" type="video/mp4"/></video>'

@@ -6,7 +6,7 @@ Key facts:
 - Founded: 2009. Legal name: DevConnect Philippines Inc. Status: non-profit (SEC-registered, BIR-compliant).
 - Reach: 70k+ online; 19k+ face-to-face attendees in 2025; 120+ free events every year; 500+ builders trained on AI Fluency.
 - Locations (13): Manila, Laguna, Legazpi, Pampanga (Luzon); Cebu, Iloilo, Bohol, Bacolod, Tacloban (Visayas); Davao, Cagayan de Oro, Iligan, Bukidnon (Mindanao). Bohol, Bacolod, Tacloban, and Cagayan de Oro are volunteer communities.
-- DEVCON HQ Office: Makati or Ortigas, Metro Manila. Contact: hello@devcon.ph.
+- DEVCON HQ Office: Ortigas (main office) or Makati (AI events space by Avtica), Metro Manila. Contact: hello@devcon.ph.
 - AI programs: Hour of AI for Kids, Open-Source AI Code Camps, AI Fluency Masterclass for Builders with an Agentic AI Hackathon, 5-month AI Engineering Internships, AI Certification Scholarships.
 
 ## Start here
