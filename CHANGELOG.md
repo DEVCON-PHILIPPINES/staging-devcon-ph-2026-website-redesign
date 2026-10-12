@@ -4,6 +4,8 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.08 | Oct 12, 2026, 2:47 PM PHT | New hardware R&D case study |
+| v2.07 | Oct 12, 2026, 2:38 PM PHT | Sui case study second video |
 | v2.06 | Oct 7, 2026, 2:26 PM PHT | Agentic code camp case study beta framing |
 | v2.05 | Oct 7, 2026, 2:21 PM PHT | Agentic code camp case study written for partners |
 | v2.04 | Oct 7, 2026, 2:18 PM PHT | Agentic code camp case study photos and partner call |
