@@ -4,6 +4,7 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.09 | Oct 12, 2026, 4:18 PM PHT | Videos autoplay muted |
 | v2.08 | Oct 12, 2026, 2:47 PM PHT | New hardware R&D case study |
 | v2.07 | Oct 12, 2026, 2:38 PM PHT | Sui case study second video |
 | v2.06 | Oct 7, 2026, 2:26 PM PHT | Agentic code camp case study beta framing |
