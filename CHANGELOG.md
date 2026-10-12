@@ -4,6 +4,7 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.11 | Oct 12, 2026, 10:52 PM PHT | Case study thumbnails, partner logo, and ICP video |
 | v2.10 | Oct 12, 2026, 10:46 PM PHT | 2026 theme sitewide; AI code camps logos, photos, and scale call |
 | v2.09 | Oct 12, 2026, 4:18 PM PHT | Videos autoplay muted |
 | v2.08 | Oct 12, 2026, 2:47 PM PHT | New hardware R&D case study |
