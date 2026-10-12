@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.11 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.12 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -100,7 +100,7 @@ These rules are enforced by review and, where possible, by `scripts/check_site.p
 - **Chapter pages:** active chapters lead with **Volunteer today** (volunteer form popup) and **Join DEVCON+** ("Join DEVCON+ to start earning points and redeeming rewards like merch"). Each page has a 2 to 3 sentence chapter president profile drawn from verified chapter data, a "Did you know?" with local economic context tech can help transform, a first-time visitor guide ("First time in <place>? Must-visit spots", 4 destinations) with the active officer host perk, and the volunteer-led line near the end.
 - **Chapter capacity:** as a volunteer community, DEVCON has limited capacity. To date, 4 chapters were not renewed for non-compliance and inactivity. DEVCON always prioritizes quality over quantity, of both events and impact. Requirements are listed on the Invite page (`/invite/#chapter-requirements`).
 - **How chapters start:** every chapter starts with a DEVCON speaker paying it forward at a free event. Hosts cover each volunteer speaker's transportation, meals, a token of appreciation, and accommodations (as applicable); this is required outside existing chapter locations. Invitations go to hello@devcon.ph using the pre-filled invitation email on the Invite page.
-- **Office:** "DEVCON HQ Office at Makati or Ortigas".
+- **Office:** "DEVCON HQ main office in Ortigas, with a new space by Avtica for AI events in Makati".
 - **Programs and names:** "AI Fluency for Builders"; "Beyond the capital" (chapter presidents section); mention AI Certification Scholarships; AI tools are "OpenCode, Anthropic Claude, Ollama, and more".
 - **AI Scholarships:** scholarships and exam attempts are granted on an approval basis and are not guaranteed.
 - **Internships:** Jumpstart runs five months, voluntary or as an academic requirement. Applications go through the Airtable form.
@@ -146,6 +146,7 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **DevRel Case Studies hub:** every card opens with a 16:9 photo thumbnail (docs/case-studies/thumbs/), linking to its case study.
 - **ICP case study:** 500+ projects are labeled as two years, 2024 to 2025; "Empowering Filipino Developers" video (HilqYfgZ4j4) after the numbers.
 - **AI and Physical Computing for Educators:** BDO Network Bank logo in the partners row.
+- **Homepage cross-links:** the About section offers About us and Meet the leadership; the 2026 theme block offers Read the DEVCON 17 manifesto and Meet the leaders engineering it.
 - **All YouTube embeds autoplay muted** (autoplay=1, mute=1, playsinline=1, allow="autoplay"), sitewide, privacy-enhanced player.
 - **Video:** the NEXUS final-stop video (YouTube, privacy-enhanced embed, muted autoplay, centered) on the Mindanao AI Caravan case study; "DEVCON at 16: Inspiring the Next Generation with DEVCON Kids" (SdVjWd_4MUE) on the DEVCON Kids page, and "Why Sui partnered with DEVCON Philippines" (JDe6L8peLvk) plus a second video, "Sui and DEVCON Philippines launch Build Beyond" (F4I92at8iF0), on the Sui case study; a DEVCON TikTok embed is ready in scripts/sui_tiktok_embed.html for when that video is public and embeddable (CSP frame-src already allows www.tiktok.com); CSP allows only youtube-nocookie.com and youtube.com frames.
 - **Section rhythm:** location pages alternate section backgrounds; related pairs (events + snapshots, stats + awards, quality over quantity + volunteer-led line) share a band; 72 px desktop / 48 px mobile spacing.
