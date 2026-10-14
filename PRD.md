@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.14 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.15 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -143,7 +143,7 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **DEVCON Studios x NVIDIA Jetson Orin Nano case study** (`/case-studies/devcon-studios-nvidia-orin-nano/`): Kai, an edge offline AI robot built in public by Cohort 4 AI Engineering Interns on a Jetson Orin Nano Developer Kit brought home by founder Winston Damarillo; four build-in-public Shorts (VIEh8Wy3oEA, 6WFQfZ0RLDk, XkiajuFTPbQ, zQSmjp5M90k), three build-log clips hosted with the page, the Meet Kai infographic, NVIDIA product images (credited), technical stack, roadmap (Isaac Sim, Omniverse), and a partner section on telling builder stories with partner tech. Main CTA: Collaborate with DEVCON Studios. First card on DevRel Case Studies.
 - **Theme:** the 2026 theme is Engineering an AI-Ready Nation everywhere; the 2025 line "a technology-empowered Philippines for all" is not used.
 - **AI Code Camps** (`/programs/ai-code-camps/`): main CTA Help scale this nationwide (header and close); "Built on open models and open tools" logo section (Ollama, Qwen by Alibaba Cloud, Llama by Meta, Gemma by Google, Claude by Anthropic, OpenCode, GitHub, Vercel) plus model logos in the builder chart; event photos moved up right after the results as a large lead photo and a row.
-- **DevRel Case Studies hub:** every card opens with a 16:9 photo thumbnail (docs/case-studies/thumbs/), linking to its case study.
+- **DevRel Case Studies hub:** every card opens with a full-width photo thumbnail (docs/case-studies/thumbs/), cropped from the center of its source photo and centered in the card, linking to its case study.
 - **ICP case study:** 500+ projects are labeled as two years, 2024 to 2025; "Empowering Filipino Developers" video (HilqYfgZ4j4) after the numbers.
 - **AI and Physical Computing for Educators:** BDO Network Bank logo in the partners row.
 - **Homepage cross-links:** the About section offers About us and Meet the leadership; the 2026 theme block offers Read the DEVCON 17 manifesto and Meet the leaders engineering it.
