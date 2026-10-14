@@ -4,6 +4,7 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.15 | Oct 14, 2026, 11:17 AM PHT | Case study thumbnails centered |
 | v2.14 | Oct 14, 2026, 11:08 AM PHT | Masterclass and hackathon guide: tools and checklist |
 | v2.13 | Oct 14, 2026, 10:48 AM PHT | New playbook guide for whole-day masterclass and hackathon events |
 | v2.12 | Oct 13, 2026, 1:25 AM PHT | HQ office details; homepage links to leadership and manifesto |
