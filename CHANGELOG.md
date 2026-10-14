@@ -4,6 +4,7 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.13 | Oct 14, 2026, 10:48 AM PHT | New playbook guide for whole-day masterclass and hackathon events |
 | v2.12 | Oct 13, 2026, 1:25 AM PHT | HQ office details; homepage links to leadership and manifesto |
 | v2.11 | Oct 12, 2026, 10:52 PM PHT | Case study thumbnails, partner logo, and ICP video |
 | v2.10 | Oct 12, 2026, 10:46 PM PHT | 2026 theme sitewide; AI code camps logos, photos, and scale call |
