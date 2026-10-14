@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.12 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.14 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -57,7 +57,7 @@ The site is a static, self-contained HTML build. It is a visual and content blue
 
 **Homepage order:** hero, logo carousel ("Trusted by leaders and pioneers"), locations map (static on mobile), numbers, about, 17 years, explore, Recent news 3×3 ("What we've been building", led by the Mindanao AI Caravan as major news), Be part of DEVCON 17 hub, FAQ, partners, DEVCON+ banner.
 
-**Pages (53):**
+**Pages (54):**
 
 - **Core:** Home (`/`), About DEVCON Philippines (`about`, org history and "a community, not an events company"), DEVCON 17 manifesto (`17years`, Engineering an AI-Ready Nation and the 17-year anniversary), Leadership (`leadership`), Programs (`programs`), Attend (`attend`), Partner (`partner`), Invite DEVCON (`invite`), AI Scholarships (`ai`), Jumpstart Internships (`jumpstart-internships`), AI code camps (`ai-code-camps`).
 - **Locations:** Locations hub (`chapters`) and 13 location pages: manila, laguna, legazpi, pampanga, cebu, iloilo, bohol, bacolod, tacloban, davao, iligan, cagayandeoro, bukidnon.
@@ -147,6 +147,7 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **ICP case study:** 500+ projects are labeled as two years, 2024 to 2025; "Empowering Filipino Developers" video (HilqYfgZ4j4) after the numbers.
 - **AI and Physical Computing for Educators:** BDO Network Bank logo in the partners row.
 - **Homepage cross-links:** the About section offers About us and Meet the leadership; the 2026 theme block offers Read the DEVCON 17 manifesto and Meet the leaders engineering it.
+- **Playbook: DEVCON Masterclass and Hackathon Best Practice and Checklist** (`/playbook/masterclass-hackathon-guide/`): a generic whole-day event guide (morning masterclass, afternoon rapid hackathon) with overview and principles, linked tools participants can use (Claude, OpenRouter, Google AI Studio, Ollama, OpenCode, Google Antigravity, Lovable, GitHub, Vercel), a 3-month plan, a sample run of show with critical transitions, duties per lead (11 roles), risk management with decision defaults, a four-stage readiness checklist, and best practices. No sponsor, venue, chapter, or person names, and no budget figures. Linked from the Community Playbook.
 - **All YouTube embeds autoplay muted** (autoplay=1, mute=1, playsinline=1, allow="autoplay"), sitewide, privacy-enhanced player.
 - **Video:** the NEXUS final-stop video (YouTube, privacy-enhanced embed, muted autoplay, centered) on the Mindanao AI Caravan case study; "DEVCON at 16: Inspiring the Next Generation with DEVCON Kids" (SdVjWd_4MUE) on the DEVCON Kids page, and "Why Sui partnered with DEVCON Philippines" (JDe6L8peLvk) plus a second video, "Sui and DEVCON Philippines launch Build Beyond" (F4I92at8iF0), on the Sui case study; a DEVCON TikTok embed is ready in scripts/sui_tiktok_embed.html for when that video is public and embeddable (CSP frame-src already allows www.tiktok.com); CSP allows only youtube-nocookie.com and youtube.com frames.
 - **Section rhythm:** location pages alternate section backgrounds; related pairs (events + snapshots, stats + awards, quality over quantity + volunteer-led line) share a band; 72 px desktop / 48 px mobile spacing.
