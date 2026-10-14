@@ -39,7 +39,7 @@
   "/playbook/campus-events-guidelines/",
   "/playbook/child-protection-policy/",
   "/playbook/code-of-conduct/",
-  "/playbook/masterclass-hackathon-guide/",
+  "/playbook/hackathon-best-practice/",
   "/playbook/privacy-and-safe-space/",
   "/playbook/volunteers-guide/",
   "/programs/",
@@ -210,6 +210,7 @@
   "/feed/": "/",
   "/comments/feed/": "/",
   "/author/devconadmin/": "/",
-  "/brand-kit/feed/": "/playbook/brand-kit/"
+  "/brand-kit/feed/": "/playbook/brand-kit/",
+  "/playbook/masterclass-hackathon-guide/": "/playbook/hackathon-best-practice/"
  }
 }

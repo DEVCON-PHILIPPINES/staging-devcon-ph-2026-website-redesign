@@ -3,8 +3,8 @@
 import re, glob, json, os
 from urllib.parse import quote
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-PATH = 'playbook/masterclass-hackathon-guide'
-SPA = 'masterclass-hackathon-guide'
+PATH = 'playbook/hackathon-best-practice'
+SPA = 'hackathon-best-practice'
 TITLE = 'DEVCON Masterclass and Hackathon Best Practice and Checklist | DEVCON Community Playbook'
 DESC = ('DEVCON Masterclass and Hackathon Best Practice and Checklist: run a whole-day AI event with a morning masterclass and an afternoon rapid hackathon. '
         'Overview, tools, a 3-month plan, a sample program, duties per lead, risk management, and a readiness checklist.')
@@ -281,7 +281,7 @@ os.makedirs(f'docs/{PATH}', exist_ok=True); open(f'docs/{PATH}/index.html', 'w',
 f = 'docs/playbook/index.html'; h = open(f, encoding='utf-8').read()
 h = re.sub(r'<li class="pp" style="--c:#4DA2FF"><span class="pp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5".*?</a></li>\s*', '', h, flags=re.S)
 if True:
-    i = h.index('</a></li>', h.index('href="brand-kit/"')) + len('</a></li>'); h = h[:i] + '\n        ' + CARD('masterclass-hackathon-guide/') + h[i:]
+    i = h.index('</a></li>', h.index('href="brand-kit/"')) + len('</a></li>'); h = h[:i] + '\n        ' + CARD('hackathon-best-practice/') + h[i:]
 open(f, 'w', encoding='utf-8').write(h)
 # 3) single-file build
 c = glob.glob('combined/*.html')[0]; t = open(c, encoding='utf-8').read()
