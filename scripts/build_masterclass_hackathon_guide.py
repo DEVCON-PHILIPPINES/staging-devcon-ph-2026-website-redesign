@@ -5,11 +5,38 @@ from urllib.parse import quote
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 PATH = 'playbook/masterclass-hackathon-guide'
 SPA = 'masterclass-hackathon-guide'
-TITLE = 'How to Run a Whole-Day AI Masterclass and Hackathon: Planning Guide | DEVCON Community Playbook'
-DESC = ('A DEVCON Community Playbook guide to running a whole-day AI event: a morning masterclass and an afternoon rapid hackathon. '
-        'Overview, a 3-month plan, a sample program, duties per lead, risk management, and best practices.')
+TITLE = 'DEVCON Masterclass and Hackathon Best Practice and Checklist | DEVCON Community Playbook'
+DESC = ('DEVCON Masterclass and Hackathon Best Practice and Checklist: run a whole-day AI event with a morning masterclass and an afternoon rapid hackathon. '
+        'Overview, tools, a 3-month plan, a sample program, duties per lead, risk management, and a readiness checklist.')
 TALK = 'mailto:hello@devcon.ph?subject=' + quote('Planning a whole-day AI Masterclass and Hackathon')
 
+import re as _re
+def _icon(n, label):
+    s = open(f'/tmp/acc/{n}.svg').read(); d = _re.search(r'<path d="([^"]+)"', s).group(1)
+    return f'<svg class="tlogo" viewBox="0 0 24 24" role="img" aria-label="{label}"><path fill="currentColor" d="{d}"/></svg>'
+_CODE = '<svg class="tlogo" viewBox="0 0 24 24" role="img" aria-label="{l}"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>'
+_ROUTE = '<svg class="tlogo" viewBox="0 0 24 24" role="img" aria-label="{l}"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h6l4 6-4 6H4M14 12h6M17 9l3 3-3 3"/></svg>'
+_HEART = '<svg class="tlogo" viewBox="0 0 24 24" role="img" aria-label="{l}"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>'
+TOOLS = [
+ ('Think and orchestrate', [
+   (_icon('claude','Claude'), 'Claude', 'https://claude.ai', 'AI assistant for reasoning, coding, and content'),
+   (_ROUTE.format(l='OpenRouter'), 'OpenRouter', 'https://openrouter.ai', 'One API for many AI models, with usage limits'),
+   (_icon('google','Google AI Studio'), 'Google AI Studio', 'https://aistudio.google.com', 'Gemini API and fast prototyping'),
+   (_icon('ollama','Ollama'), 'Ollama', 'https://ollama.com', 'Run open models locally, no cloud needed')]),
+ ('Build', [
+   (_CODE.format(l='OpenCode'), 'OpenCode', 'https://opencode.ai', 'Open-source AI coding agent'),
+   (_icon('google','Google Antigravity'), 'Google Antigravity', 'https://antigravity.google', 'AI-powered development platform'),
+   (_HEART.format(l='Lovable'), 'Lovable', 'https://lovable.dev', 'AI app builder, from prompt to app')]),
+ ('Ship and demo', [
+   (_icon('github','GitHub'), 'GitHub', 'https://github.com', 'Share your code and fork starter kits'),
+   (_icon('vercel','Vercel'), 'Vercel', 'https://vercel.com', 'Deploy a live demo link in minutes')]),
+]
+CHECK = [
+ ('Four weeks out', ['Venue, rooms, and date confirmed in writing', 'Speakers, facilitators, and judges confirmed', 'Registration open, with separate masterclass and hackathon sign-ups', 'Prints and merch ordered']),
+ ('One week out', ['Volunteer training done; every lead has a backup', 'Pre-install session held for participants', 'Hackathon kit, rubric, and per-team usage caps ready', 'Headcount locked with the venue and caterer']),
+ ('Day before', ['Stage, sound, screens, and livestream tested at the venue', 'Backup internet, power, and offline slides ready', 'Registration desk, QR check-in, and signage set up', 'Weather checked and go or no-go decided']),
+ ('Event day', ['Team briefing at call time', 'Run of show, script, and timer with the host', 'Partners recognized at opening and closing', 'Speaker tokens handed over, debrief held, venue cleared']),
+]
 PLAN = [
  ('Month 1 · Weeks 12 to 9', 'Set the foundation', '#71B405', [
    ('Define the goal and audience', 'Who is it for, what should they leave with, and how many seats.'),
@@ -104,15 +131,18 @@ def page_html(mode):
     dec = ''.join(f'<tr><th scope="row">{d}</th><td>{w}</td><td>{x}</td></tr>' for d, w, x in DECISIONS)
     proven = ''.join(f'<li>{p}</li>' for p in PROVEN)
     watch = ''.join(f'<li><b>{w}</b><span>{f}</span></li>' for w, f in WATCH)
+    tools = ''.join(f'<h3 class="sub-h mh-tgroup">{g}</h3><ul class="tool-logos" role="list">' + ''.join(
+        f'<li>{svg}<b><a href="{u}" target="_blank" rel="noopener">{n}<span class="sr-only"> (opens in a new tab)</span></a></b><span>{d}</span></li>' for svg, n, u, d in items) + '</ul>' for g, items in TOOLS)
+    checks = ''.join(f'<div class="mh-checkcol"><h3 class="sub-h">{h}</h3><ul class="mh-checklist" role="list">' + ''.join(f'<li><span class="mh-box" aria-hidden="true"></span>{x}</li>' for x in items) + '</ul></div>' for h, items in CHECK)
     hidden = ' hidden' if mode == 'spa' else ''
     return f'''<div class="page" data-page="{SPA}"{hidden}>
   <header class="page-hero page-hero--playbook">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="{home}">Home</a><span aria-hidden="true">/</span><a href="{L('playbook')}">Community Playbook</a><span aria-hidden="true">/</span><span aria-current="page">Masterclass and Hackathon guide</span></nav>
-      <span class="eyebrow" style="color:var(--y)">Community Playbook · Event guide</span>
-      <h1 id="{SPA}-title">Run a whole-day AI Masterclass and Hackathon</h1>
-      <p class="page-lead">Learn in the morning, build in the afternoon. A sample program and the best practices we&#8217;ve learned running these days across the country, from a 3-month plan to clear duties for every lead and a risk plan that keeps the day on track.</p>
-      <div class="hero-btns"><a class="btn-primary btn-xl" href="#mh-plan">See the 3-month plan</a><a class="btn-outline" href="#mh-program">See the sample program</a></div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{home}">Home</a><span aria-hidden="true">/</span><a href="{L('playbook')}">Community Playbook</a><span aria-hidden="true">/</span><span aria-current="page">Masterclass and Hackathon Best Practice and Checklist</span></nav>
+      <span class="eyebrow" style="color:var(--y)">Community Playbook · Best practice and checklist</span>
+      <h1 id="{SPA}-title">DEVCON Masterclass and Hackathon Best Practice and Checklist</h1>
+      <p class="page-lead">Learn in the morning, build in the afternoon. The best practices we&#8217;ve learned running these days across the country: the tools to use, a 3-month plan, a sample program, clear duties for every lead, a risk plan, and a readiness checklist.</p>
+      <div class="hero-btns"><a class="btn-primary btn-xl" href="#mh-plan">See the 3-month plan</a><a class="btn-outline" href="#mh-check">Go to the checklist</a></div>
     </div>
   </header>
 
@@ -132,13 +162,19 @@ def page_html(mode):
     </ul>
   </div></section>
 
-  <section class="section band2" id="mh-plan" aria-labelledby="mh-plan-t"><div class="wrap">
+  <section class="section band2" aria-labelledby="mh-tools"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Tools</span><h2 id="mh-tools">Tools participants can use</h2>
+      <p>Builders bring their own laptops with these set up before the day. Open-source tools are encouraged, and any stack is welcome.</p></header>
+    {tools}
+  </div></section>
+
+  <section class="section" id="mh-plan" aria-labelledby="mh-plan-t"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">3-month plan</span><h2 id="mh-plan-t">From first idea to impact report</h2>
       <p>Start 12 weeks out. Every task has one owner and a deadline, reviewed in a short weekly check-in.</p></header>
     <ol class="tl-grid mh-plan" role="list">{plan}</ol>
   </div></section>
 
-  <section class="section" id="mh-program" aria-labelledby="mh-program-t"><div class="wrap">
+  <section class="section band2" id="mh-program" aria-labelledby="mh-program-t"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Sample program</span><h2 id="mh-program-t">A whole-day run of show</h2>
       <p>Adjust the times to your venue. Keep the shape: learn, eat, brief, build, demo, celebrate, and end on time.</p></header>
     <div class="tbl-wrap"><table class="reach-tbl mh-tbl"><caption>Sample run of show</caption><thead><tr><th scope="col">Time</th><th scope="col">Segment</th><th scope="col">Lead</th></tr></thead><tbody>{run}</tbody></table></div>
@@ -148,13 +184,13 @@ def page_html(mode):
     </div>
   </div></section>
 
-  <section class="section band2" aria-labelledby="mh-roles"><div class="wrap">
+  <section class="section" aria-labelledby="mh-roles"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Roles</span><h2 id="mh-roles">Clear duties for every lead</h2>
       <p>One name per role. Every role is load-bearing, so each lead also names a backup.</p></header>
     <ul class="mh-roles" role="list">{roles}</ul>
   </div></section>
 
-  <section class="section" aria-labelledby="mh-risk"><div class="wrap">
+  <section class="section band2" aria-labelledby="mh-risk"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Risk management</span><h2 id="mh-risk">Plan for what can go wrong</h2>
       <p>Review this list at every weekly check-in and again during the dry runs.</p></header>
     <div class="tbl-wrap"><table class="reach-tbl mh-tbl mh-risks"><caption>Risks and how to manage them</caption><thead><tr><th scope="col">Risk</th><th scope="col">Level</th><th scope="col">How to manage it</th></tr></thead><tbody>{risks}</tbody></table></div>
@@ -162,6 +198,12 @@ def page_html(mode):
       <h3 class="sub-h">Key decisions, with a default if no one decides</h3>
       <div class="tbl-wrap"><table class="reach-tbl mh-tbl"><caption>Decision points</caption><thead><tr><th scope="col">Decision</th><th scope="col">Deadline</th><th scope="col">Default</th></tr></thead><tbody>{dec}</tbody></table></div>
     </div>
+  </div></section>
+
+  <section class="section" id="mh-check" aria-labelledby="mh-check-t"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Checklist</span><h2 id="mh-check-t">Readiness checklist</h2>
+      <p>Tick these off as you go. If a box is still empty the day before, raise it with the event director.</p></header>
+    <div class="mh-checks">{checks}</div>
   </div></section>
 
   <section class="section band2" aria-labelledby="mh-best"><div class="wrap">
@@ -197,7 +239,16 @@ def page_html(mode):
 </div>
 '''
 
-CSS = ('.mh-when{display:block;color:var(--text-secondary);font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}'
+CSS = ('.tool-logos{list-style:none;margin:0 0 8px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}'
+       '.tool-logos li{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;align-items:center;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line)}'
+       '.tool-logos .tlogo{grid-row:span 2;width:36px;height:36px;color:#fff}.tool-logos b a{color:#fff;font-weight:900;text-decoration:underline;text-decoration-color:var(--y);text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}.tool-logos b a:hover{color:var(--y)}.tool-logos span{color:var(--text-secondary);font-size:.86rem;line-height:1.4}'
+       '.mh-tgroup{margin:18px 0 10px}.mh-tgroup:first-of-type{margin-top:0}'
+       '.mh-checks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.mh-checkcol{padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line)}.mh-checkcol .sub-h{margin-top:0}'
+       '.mh-checklist{list-style:none;margin:0;padding:0;display:grid;gap:10px}.mh-checklist li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;color:#fff;line-height:1.45;font-size:.93rem}'
+       '.mh-box{width:18px;height:18px;margin-top:2px;border-radius:5px;border:2px solid var(--y)}'
+       '@media (max-width:1000px){.tool-logos,.mh-checks{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:560px){.tool-logos,.mh-checks{grid-template-columns:minmax(0,1fr)}}'
+       '@media print{.mh-box{border-color:#000}}'
+       '.mh-when{display:block;color:var(--text-secondary);font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}'
        '.mh-plan{grid-template-columns:repeat(4,minmax(0,1fr))}'
        '.mh-tbl td,.mh-tbl th{text-align:left!important;vertical-align:top}.mh-tbl tbody th{white-space:nowrap;color:var(--y)}.mh-risks tbody th{white-space:normal;color:#fff}'
        '.mh-trans li{grid-template-columns:150px minmax(0,1fr)!important}'
@@ -216,7 +267,7 @@ CSS = ('.mh-when{display:block;color:var(--text-secondary);font-size:.78rem;font
        '@media (max-width:640px){.mh-plan,.mh-roles,.mh-dos{grid-template-columns:minmax(0,1fr)}.mh-trans li{grid-template-columns:minmax(0,1fr)!important}}')
 
 CARD = lambda href: (f'<li class="pp" style="--c:#4DA2FF"><span class="pp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M7 14h4M7 17h7"/></svg></span>'
-                     f'<h3>Masterclass and Hackathon guide</h3><p>A whole-day plan: 3-month timeline, sample program, roles, and risks.</p><a class="pp-link" href="{href}">Read the event guide</a></li>')
+                     f'<h3>DEVCON Masterclass and Hackathon Best Practice and Checklist</h3><p>Tools, a 3-month plan, sample program, roles, risks, and a readiness checklist.</p><a class="pp-link" href="{href}">Open the best practice and checklist</a></li>')
 
 # 1) folder page from the Volunteers Guide template
 src = open('docs/playbook/volunteers-guide/index.html', encoding='utf-8').read()
@@ -228,12 +279,14 @@ if CSS not in out: out = out.replace('</style>', CSS + '</style>', 1)
 os.makedirs(f'docs/{PATH}', exist_ok=True); open(f'docs/{PATH}/index.html', 'w', encoding='utf-8').write(out)
 # 2) playbook hub card (after the Brand Kit card)
 f = 'docs/playbook/index.html'; h = open(f, encoding='utf-8').read()
-if 'masterclass-hackathon-guide/' not in h:
+h = re.sub(r'<li class="pp" style="--c:#4DA2FF"><span class="pp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5".*?</a></li>\s*', '', h, flags=re.S)
+if True:
     i = h.index('</a></li>', h.index('href="brand-kit/"')) + len('</a></li>'); h = h[:i] + '\n        ' + CARD('masterclass-hackathon-guide/') + h[i:]
 open(f, 'w', encoding='utf-8').write(h)
 # 3) single-file build
 c = glob.glob('combined/*.html')[0]; t = open(c, encoding='utf-8').read()
-if f'data-page="{SPA}"' not in t:
+t = re.sub(r'<div class="page" data-page="masterclass-hackathon-guide".*?</div>\n(?=</main>)', '', t, flags=re.S); t = re.sub(r'<li class="pp" style="--c:#4DA2FF"><span class="pp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5".*?</a></li>\s*', '', t, flags=re.S)
+if True:
     i = t.index('</main>'); t = t[:i] + page_html('spa') + t[i:]
     a = t.index('<div class="page" data-page="playbook"'); j = t.index('</a></li>', t.index('href="#/brand-kit"', a)) + len('</a></li>')
     t = t[:j] + '\n        ' + CARD(f'#/{SPA}') + t[j:]
@@ -246,9 +299,10 @@ um = json.load(open('docs/url-map.json'))
 if f'/{PATH}/' not in um['pages']: um['pages'] = sorted(um['pages'] + [f'/{PATH}/'])
 json.dump(um, open('docs/url-map.json', 'w'), indent=1)
 ll = open('docs/llms.txt').read()
-if PATH not in ll:
+ll = '\n'.join(l for l in ll.split('\n') if PATH not in l) + ('\n' if not ll.endswith('\n') else '')
+if True:
     k = ll.find('- [Brand Kit]')
-    line = f'- [Masterclass and Hackathon guide](https://devcon.ph/{PATH}/): plan a whole-day AI masterclass and hackathon\n'
+    line = f'- [DEVCON Masterclass and Hackathon Best Practice and Checklist](https://devcon.ph/{PATH}/): tools, plan, program, roles, risks, and checklist\n'
     ll = ll[:k] + line + ll[k:] if k >= 0 else ll + line
     open('docs/llms.txt', 'w').write(ll)
 print('built', PATH)
