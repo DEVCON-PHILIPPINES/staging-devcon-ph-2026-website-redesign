@@ -77,7 +77,7 @@ TRANSITIONS = [('8:00 to 9:00 AM', 'Registration rush. Fully staff the desk and 
                ('3:00 PM', 'Pitching. Judges briefed and seated, scoring sheet ready, timer visible.'),
                ('4:00 PM onward', 'Awarding and close. Recognize partners, end on time, then pack up.')]
 ROLES = [
- ('Event director', '#F2C500', ['Owns the plan, the budget, and every final decision', 'Assigns leads and runs weekly check-ins', 'Makes the go or no-go call', 'Single point of escalation on the day; arrives first for ingress']),
+ ('Event director', '#F2C500', ['Owns the plan and the budget, with DEVCON HQ approval, and every on-the-ground decision', 'Assigns leads and runs weekly check-ins', 'Makes the go or no-go call', 'Single point of escalation on the day; arrives first for ingress']),
  ('Program lead', '#A57BFF', ['Writes the run of show and host script', 'Confirms speakers, facilitators, parallel talks, and judges', 'Orders speaker tokens and hands them over right after each session', 'Leads the two dry runs and keeps the day on time']),
  ('Hackathon lead', '#71B405', ['Prepares the challenge brief, kit, rubric, and tool list', 'Sets per-team AI usage caps and sandboxed accounts', 'Runs the briefing, the build clock, the freeze, and the demo order', 'Briefs mentors and judges on the scoring']),
  ('Tech lead', '#4DA2FF', ['Tests projectors, screens, sound, and livestream the day before', 'Keeps a backup laptop, adapters, and offline copies of every slide', 'Confirms backup internet and power at key stations', 'Sets up check-in, scoring, and voting tools']),
@@ -89,6 +89,7 @@ ROLES = [
  ('Volunteers lead', '#4DA2FF', ['Recruits, assigns, and trains every volunteer', 'Shares the contact list and call time', 'Rotates breaks so no post is left unattended', 'Collects volunteer feedback for the debrief']),
  ('Finance and admin', '#EA641D', ['Tracks the budget and approves spending', 'Handles partner agreements and paperwork', 'Keeps receipts and liquidates after the event', 'Reports actuals in the impact report']),
 ]
+HQ_ROLE = '<li class="mh-role mh-role--hq" style="--c:#F2C500"><span class="mh-hq-tag">National office</span><h3>DEVCON HQ</h3><ul role="list"><li><b>Budget approval:</b> reviews and approves the event budget and any changes to it</li><li><b>Sponsors alignment:</b> aligns partners and sponsors with DEVCON standards, and approves partner recognition</li><li><b>Training:</b> trains the event director, leads, and facilitators before the day</li><li><b>Strategic approvals:</b> signs off on the program, partnerships, branding, and public announcements</li></ul></li>'
 RISKS = [
  ('Severe weather or flooding', 'High', 'Monitor official weather and disaster advisories 48 hours out. Name a backup indoor venue. Decide go or no-go at least 24 hours before and tell everyone.'),
  ('Venue rooms or capacity fall through', 'Medium', 'Get rooms confirmed in writing. Keep an alternative room or layout on standby.'),
@@ -125,7 +126,7 @@ def page_html(mode):
                    ''.join(f'<li><b>{t}</b><span>{d}</span></li>' for t, d in tasks) + '</ul></li>' for when, h, c, tasks in PLAN)
     run = ''.join(f'<tr><th scope="row">{t}</th><td>{a}</td><td>{w}</td></tr>' for t, a, w in RUN)
     trans = ''.join(f'<li><span>{t}</span><b>{d}</b></li>' for t, d in TRANSITIONS)
-    roles = ''.join(f'<li class="mh-role" style="--c:{c}"><h3>{n}</h3><ul role="list">' + ''.join(f'<li>{x}</li>' for x in b) + '</ul></li>' for n, c, b in ROLES)
+    roles = HQ_ROLE + ''.join(f'<li class="mh-role" style="--c:{c}"><h3>{n}</h3><ul role="list">' + ''.join(f'<li>{x}</li>' for x in b) + '</ul></li>' for n, c, b in ROLES)
     lvl = lambda l: {'High': 'mh-lvl--high', 'Medium': 'mh-lvl--med'}.get(l, 'mh-lvl--on')
     risks = ''.join(f'<tr><th scope="row">{r}</th><td><span class="mh-lvl {lvl(l)}">{l}</span></td><td>{m}</td></tr>' for r, l, m in RISKS)
     dec = ''.join(f'<tr><th scope="row">{d}</th><td>{w}</td><td>{x}</td></tr>' for d, w, x in DECISIONS)
@@ -186,7 +187,7 @@ def page_html(mode):
 
   <section class="section" aria-labelledby="mh-roles"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Roles</span><h2 id="mh-roles">Clear duties for every lead</h2>
-      <p>One name per role. Every role is load-bearing, so each lead also names a backup.</p></header>
+      <p>DEVCON HQ sets the guardrails; the local team runs the day. One name per role, and every lead also names a backup.</p></header>
     <ul class="mh-roles" role="list">{roles}</ul>
   </div></section>
 
@@ -239,7 +240,8 @@ def page_html(mode):
 </div>
 '''
 
-CSS = ('.tool-logos{list-style:none;margin:0 0 8px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}'
+CSS = ('.mh-role--hq{grid-column:1/-1;background:linear-gradient(135deg,rgba(242,197,0,.10),rgba(120,8,255,.08));border-color:rgba(242,197,0,.45)}.mh-role--hq ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}.mh-hq-tag{display:inline-block;margin-bottom:6px;padding:2px 10px;border-radius:999px;background:rgba(242,197,0,.16);border:1px solid rgba(242,197,0,.55);color:var(--y);font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.mh-role--hq li b{color:#fff}@media (max-width:640px){.mh-role--hq ul{grid-template-columns:minmax(0,1fr)}}'
+       '.tool-logos{list-style:none;margin:0 0 8px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}'
        '.tool-logos li{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;align-items:center;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line)}'
        '.tool-logos .tlogo{grid-row:span 2;width:36px;height:36px;color:#fff}.tool-logos b a{color:#fff;font-weight:900;text-decoration:underline;text-decoration-color:var(--y);text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}.tool-logos b a:hover{color:var(--y)}.tool-logos span{color:var(--text-secondary);font-size:.86rem;line-height:1.4}'
        '.mh-tgroup{margin:18px 0 10px}.mh-tgroup:first-of-type{margin-top:0}'
