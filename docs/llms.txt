@@ -48,5 +48,5 @@ Key facts:
 - [Campus Events Guidelines](https://devcon.ph/playbook/campus-events-guidelines/)
 - [Child Protection Policy](https://devcon.ph/playbook/child-protection-policy/)
 - [DEVCON 17 manifesto](https://devcon.ph/about/17years/): Engineering an AI-Ready Nation
-- [DEVCON Masterclass and Hackathon Best Practice and Checklist](https://devcon.ph/playbook/masterclass-hackathon-guide/): tools, plan, program, roles, risks, and checklist
+- [DEVCON Masterclass and Hackathon Best Practice and Checklist](https://devcon.ph/playbook/hackathon-best-practice/): tools, plan, program, roles, risks, and checklist
 - [Brand Kit](https://devcon.ph/playbook/brand-kit/): logos, colors, key visuals, boilerplate

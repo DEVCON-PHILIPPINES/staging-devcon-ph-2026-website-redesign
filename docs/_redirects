@@ -411,5 +411,7 @@
 /locations/tacloban /locations/tacloban/ 301
 /volunteers-guide.html /playbook/volunteers-guide/ 301
 /playbook/volunteers-guide /playbook/volunteers-guide/ 301
+/playbook/masterclass-hackathon-guide /playbook/hackathon-best-practice/ 301
+/playbook/masterclass-hackathon-guide/ /playbook/hackathon-best-practice/ 301
 /index.html / 301
 /.well-known/security.txt /security.txt 200
