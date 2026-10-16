@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.18 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.21 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -57,7 +57,7 @@ The site is a static, self-contained HTML build. It is a visual and content blue
 
 **Homepage order:** hero, logo carousel ("Trusted by leaders and pioneers"), locations map (static on mobile), numbers, about, 17 years, explore, Recent news 3×3 ("What we've been building", led by the Mindanao AI Caravan as major news), Be part of DEVCON 17 hub, FAQ, partners, DEVCON+ banner.
 
-**Pages (54):**
+**Pages (55):**
 
 - **Core:** Home (`/`), About DEVCON Philippines (`about`, org history and "a community, not an events company"), DEVCON 17 manifesto (`17years`, Engineering an AI-Ready Nation and the 17-year anniversary), Leadership (`leadership`), Programs (`programs`), Attend (`attend`), Partner (`partner`), Invite DEVCON (`invite`), AI Scholarships (`ai`), Jumpstart Internships (`jumpstart-internships`), AI code camps (`ai-code-camps`).
 - **Locations:** Locations hub (`chapters`) and 13 location pages: manila, laguna, legazpi, pampanga, cebu, iloilo, bohol, bacolod, tacloban, davao, iligan, cagayandeoro, bukidnon.
@@ -150,6 +150,13 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **Playbook: DEVCON Masterclass and Hackathon Best Practice and Checklist** (`/playbook/hackathon-best-practice/`; the earlier `/playbook/masterclass-hackathon-guide/` redirects here): a generic whole-day event guide (morning masterclass, afternoon rapid hackathon) with overview and principles, linked tools participants can use (Claude, OpenRouter, Google AI Studio, Ollama, OpenCode, Google Antigravity, Lovable, GitHub, Vercel), a 3-month plan, a sample run of show with critical transitions, duties per lead (a DEVCON HQ role for budget approval, sponsors alignment, training, and strategic approvals, plus 11 local roles), risk management with decision defaults, a four-stage readiness checklist, and best practices. No sponsor, venue, chapter, or person names, and no budget figures. Linked from the Community Playbook.
 - **Jumpstart Internships** (`/programs/jumpstart-internships/`): 18 photos distributed by theme: a Life at Jumpstart row after the numbers, hardware builds, presenting work, mentor sessions, and community events.
 - **Orin Nano case study deep dive** (from the Kai deck): platform specs (up to 67 TOPS on JetPack 6.2, 8 GB shared, 10 to 15 W), NVIDIA stack, edge versus cloud, two-pipeline architecture, behind-the-scenes challenges, the 8 GB memory budget, expectations versus reality, the eight-week journey, ideas for Cohort 5, the team (Rhea Perocho, Jhondel Mellomida), and the open-source repo github.com/Kai-Devcon/kai (Apache-2.0, 1,300+ tests). No prices.
+- **Legacy URL coverage:** every address in devcon.ph/page-sitemap.xml (52 pages, audited Oct 2026) 301-redirects to its matching page, or loads directly; none fall through to the 404 fallback.
+- **AI Code Camps feature:** "Today you're going to build your own AI": the DEVCON Barangay AI visual (open-source models through Ollama into the DEVCON app) right after the results, with the runs-on-your-computer note.
+- **DevRel Case Studies filters:** category chips (All, AI and agentic, Kids and educators, Hardware and edge AI, Web3 and blockchain, Code camps, Events and summits, Low-code) filter the cards; every card shows its category and topic tags; a live count reads the result.
+- **Hackathon guide:** the chapter president is the event director.
+- **Hermes case study:** two Shorts (9gR-vHVfEUk, eZ5_JyFjUo8), autoplay muted, after the numbers.
+- **#SHEISDEVCON x Austrian Business Agency case study** (`/case-studies/sheisdevcon-aba/`): two years of ABA support, Manila (Letran Move code camp, March 28, 2026), Iloilo (She Builds Tech Summit with FWTF), Cebu (ask-us-anything), and Davao (SUBAY, University of Mindanao, October 14, 2026, ABA first Mindanao stop); keynote Raphael Rey Bacolod; Short zqPUb6E7dX0; champion team from Ateneo de Davao; speakers, quotes, partners. First card on DevRel Case Studies.
+- **Bacolod location page:** six sections; reopening status (team reapplying, DEVCON HQ vetting); removed numbers, map, and visitor guide.
 - **All YouTube embeds autoplay muted** (autoplay=1, mute=1, playsinline=1, allow="autoplay"), sitewide, privacy-enhanced player.
 - **Video:** the NEXUS final-stop video (YouTube, privacy-enhanced embed, muted autoplay, centered) on the Mindanao AI Caravan case study; "DEVCON at 16: Inspiring the Next Generation with DEVCON Kids" (SdVjWd_4MUE) on the DEVCON Kids page, and "Why Sui partnered with DEVCON Philippines" (JDe6L8peLvk) plus a second video, "Sui and DEVCON Philippines launch Build Beyond" (F4I92at8iF0), on the Sui case study; a DEVCON TikTok embed is ready in scripts/sui_tiktok_embed.html for when that video is public and embeddable (CSP frame-src already allows www.tiktok.com); CSP allows only youtube-nocookie.com and youtube.com frames.
 - **Section rhythm:** location pages alternate section backgrounds; related pairs (events + snapshots, stats + awards, quality over quantity + volunteer-led line) share a band; 72 px desktop / 48 px mobile spacing.
