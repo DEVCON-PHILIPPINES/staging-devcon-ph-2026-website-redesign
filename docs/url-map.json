@@ -134,7 +134,7 @@
   "/scholarship/": "/programs/ai-scholarships/",
   "/scholarships/": "/programs/ai-scholarships/",
   "/certification/": "/programs/ai-scholarships/",
-  "/climate-bayanihan-devcon-dost-dlsu-climate-innovator-workshop-2025/": "/programs/",
+  "/climate-bayanihan-devcon-dost-dlsu-climate-innovator-workshop-2025/": "/programs/crest/",
   "/hour-of-ai/": "/case-studies/hour-of-ai/",
   "/hour-of-code/": "/case-studies/hour-of-ai/",
   "/kids/": "/programs/kids/",
@@ -211,6 +211,21 @@
   "/comments/feed/": "/",
   "/author/devconadmin/": "/",
   "/brand-kit/feed/": "/playbook/brand-kit/",
-  "/playbook/masterclass-hackathon-guide/": "/playbook/hackathon-best-practice/"
+  "/playbook/masterclass-hackathon-guide/": "/playbook/hackathon-best-practice/",
+  "/campusambassador/": "/programs/campus/",
+  "/campus-devcon-summit-2024-tech-nexus/": "/programs/campus/",
+  "/devcon-climate-resilience-innovation-summit-2025/": "/programs/crest/",
+  "/news-2024-devcon-crest-philippines-launches-initiatives-for-climate-tech-innovation/": "/programs/crest/",
+  "/professional-developers-and-geeks-gather-for-devcon-pro-summit-on-october-20/": "/programs/pro-summit/",
+  "/summit2021/": "/programs/pro-summit/",
+  "/news-2024-devcon-philippines-and-icp-hub-philippines-partner-for-nationwide-smart-contract-code-camps/": "/case-studies/icp/",
+  "/devcon-kids-inventory/": "/programs/kids/",
+  "/support/": "/partner/",
+  "/careers/": "/programs/jumpstart-internships/",
+  "/plus/": "/attend/",
+  "/test-practice/": "/locations/",
+  "/home-beta-v2-2/": "/",
+  "/homepage-beta-v2/": "/",
+  "/hello-world/": "/"
  }
 }

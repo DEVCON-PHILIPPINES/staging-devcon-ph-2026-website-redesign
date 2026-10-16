@@ -2,7 +2,7 @@
 
 The rebuilt **devcon.ph** for DEVCON 17: *Engineering an AI-Ready Nation*. It is written to replace the current devcon.ph content, so every page lives here and nothing links back to the old site.
 
-**Current version:** v2.18 · Oct 16, 2026, 6:57 PM PHT (see [CHANGELOG.md](CHANGELOG.md))
+**Current version:** v2.19 · Oct 16, 2026, 7:09 PM PHT (see [CHANGELOG.md](CHANGELOG.md))
 
 ## What's in this repo
 
