@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.17 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.18 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -148,6 +148,8 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **AI and Physical Computing for Educators:** BDO Network Bank logo in the partners row.
 - **Homepage cross-links:** the About section offers About us and Meet the leadership; the 2026 theme block offers Read the DEVCON 17 manifesto and Meet the leaders engineering it.
 - **Playbook: DEVCON Masterclass and Hackathon Best Practice and Checklist** (`/playbook/hackathon-best-practice/`; the earlier `/playbook/masterclass-hackathon-guide/` redirects here): a generic whole-day event guide (morning masterclass, afternoon rapid hackathon) with overview and principles, linked tools participants can use (Claude, OpenRouter, Google AI Studio, Ollama, OpenCode, Google Antigravity, Lovable, GitHub, Vercel), a 3-month plan, a sample run of show with critical transitions, duties per lead (a DEVCON HQ role for budget approval, sponsors alignment, training, and strategic approvals, plus 11 local roles), risk management with decision defaults, a four-stage readiness checklist, and best practices. No sponsor, venue, chapter, or person names, and no budget figures. Linked from the Community Playbook.
+- **Jumpstart Internships** (`/programs/jumpstart-internships/`): 18 photos distributed by theme: a Life at Jumpstart row after the numbers, hardware builds, presenting work, mentor sessions, and community events.
+- **Orin Nano case study deep dive** (from the Kai deck): platform specs (up to 67 TOPS on JetPack 6.2, 8 GB shared, 10 to 15 W), NVIDIA stack, edge versus cloud, two-pipeline architecture, behind-the-scenes challenges, the 8 GB memory budget, expectations versus reality, the eight-week journey, ideas for Cohort 5, the team (Rhea Perocho, Jhondel Mellomida), and the open-source repo github.com/Kai-Devcon/kai (Apache-2.0, 1,300+ tests). No prices.
 - **All YouTube embeds autoplay muted** (autoplay=1, mute=1, playsinline=1, allow="autoplay"), sitewide, privacy-enhanced player.
 - **Video:** the NEXUS final-stop video (YouTube, privacy-enhanced embed, muted autoplay, centered) on the Mindanao AI Caravan case study; "DEVCON at 16: Inspiring the Next Generation with DEVCON Kids" (SdVjWd_4MUE) on the DEVCON Kids page, and "Why Sui partnered with DEVCON Philippines" (JDe6L8peLvk) plus a second video, "Sui and DEVCON Philippines launch Build Beyond" (F4I92at8iF0), on the Sui case study; a DEVCON TikTok embed is ready in scripts/sui_tiktok_embed.html for when that video is public and embeddable (CSP frame-src already allows www.tiktok.com); CSP allows only youtube-nocookie.com and youtube.com frames.
 - **Section rhythm:** location pages alternate section backgrounds; related pairs (events + snapshots, stats + awards, quality over quantity + volunteer-led line) share a band; 72 px desktop / 48 px mobile spacing.
