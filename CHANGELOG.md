@@ -4,6 +4,8 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.18 | Oct 16, 2026, 6:57 PM PHT | Internship photos; hardware R&D case study deep dive |
+| v2.17 | Oct 14, 2026, 11:43 AM PHT | Hackathon best practice guide: national office role |
 | v2.16 | Oct 14, 2026, 11:30 AM PHT | Hackathon best practice guide moved to a shorter address |
 | v2.15 | Oct 14, 2026, 11:17 AM PHT | Case study thumbnails centered |
 | v2.14 | Oct 14, 2026, 11:08 AM PHT | Masterclass and hackathon guide: tools and checklist |

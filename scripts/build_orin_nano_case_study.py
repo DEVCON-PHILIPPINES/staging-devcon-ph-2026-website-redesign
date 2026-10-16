@@ -9,7 +9,7 @@ DESC = ('How DEVCON Studios and Cohort 4 AI Engineering Interns turned an NVIDIA
         'and built it in public from unboxing to R&D showcase. A model for telling builder stories with partner technology.')
 COLLAB = 'mailto:hello@devcon.ph?subject=' + quote('Collaborate with DEVCON Studios: build in public with our tech')
 
-def page_html(mode):
+def _page_html(mode):
     """mode 'docs' = folder page links; 'spa' = single-file hash links"""
     def L(key):
         docs = {'partner': '../../partner/', 'internships': '../../programs/jumpstart-internships/', 'hermes-camp': '../hermes-agentic-code-camp/',
@@ -64,7 +64,7 @@ def page_html(mode):
   <section class="numbers" aria-labelledby="kai-num"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">What your tech gets with DEVCON Studios</span><h2 id="kai-num">Built for real, built in public</h2>
       <p>One developer kit became a working robot, a content series, and a showcase at our 17th anniversary.</p></header>
-    <ul class="numbers-grid" role="list">{stat('20+', 'Capabilities running on-device, from vision to voice', 'var(--y)')}{stat('100%', 'Offline: no cloud, no internet, no data leaving the room', 'var(--g)')}{stat('11', 'Face parameters tracked every frame', 'var(--p2)')}{stat('4', 'Build-in-public Shorts, from unboxing to showcase', 'var(--o)')}</ul>
+    <ul class="numbers-grid" role="list">{stat('Up to 67', 'TOPS of AI compute on JetPack 6.2, in the palm of your hand', 'var(--y)')}{stat('8 GB', 'Shared memory for vision, voice, and the LLM at once', 'var(--g)')}{stat('10–15 W', 'Power draw: runs off a powerbank, untethered', 'var(--p2)')}{stat('1,300+', 'Tests in the open-source repo, no hardware needed', 'var(--o)')}</ul>
   </div></section>
 
   <section class="section" aria-labelledby="kai-watch"><div class="wrap">
@@ -85,10 +85,10 @@ def page_html(mode):
       <h2 class="cs-h2">An edge offline AI robot that sees, listens, and responds</h2>
       <p class="lead-p">Kai thinks, sees, and responds entirely on the device. No cloud, no internet, and no data leaving the room. Turn your head, open your mouth, and Kai mirrors your face in real time.</p>
       <ul class="doc-list">
-        <li><b>Sees you:</b> a chest camera tracks 11 face parameters per frame, plus gestures (nod, shake, proximity) and a lightweight emotion read.</li>
-        <li><b>Talks with you:</b> Google Gemma runs locally as Kai&#8217;s conversational layer, with speech-to-text in Tagalog and English and a spoken reply synced to a moving jaw.</li>
-        <li><b>Knows your documents:</b> offline document Q&amp;A over text, Markdown, and PDF files.</li>
-        <li><b>Private by design:</b> facial data is processed in memory only, never stored or sent, and people are told before tracking starts.</li>
+        <li><b>Sees you:</b> MediaPipe FaceMesh tracks 11 facial parameters in real time, from a 320 by 240 camera feed.</li>
+        <li><b>Follows you:</b> a PD controller glides the head to whoever is in front of it, at 15 updates a second.</li>
+        <li><b>Talks with you:</b> wakes on &#8220;Hey Kai&#8221;, turns speech to text with Whisper, answers from its own documents with Google Gemma, and speaks with Piper, jaw in sync.</li>
+        <li><b>Private by design:</b> every workload runs on the device, with no cloud and no API keys on the path. Facial data is processed in memory only, and people are told before tracking starts.</li>
       </ul>
     </div>
   </div></section>
@@ -101,33 +101,125 @@ def page_html(mode):
       {clip('02-cardboard-prototype', 'Cardboard prototype', 'The head turns and the mouth opens, mirroring a face on screen.')}
       {clip('03-kai-beta', 'Kai, beta', 'Eyes, pigtails, and all: smooth head and jaw movement, ready for the stage.')}
     </ol>
-  </div></section>
-
-  <section class="section band2" aria-labelledby="kai-stack"><div class="wrap">
-    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Technical depth</span><h2 id="kai-stack">What the NVIDIA Jetson Orin Nano made possible</h2>
-      <p>The Jetson&#8217;s NVIDIA Ampere GPU, with 1,024 CUDA cores and 32 Tensor Cores, and 8 GB of memory, carried vision, language, voice, and robotics at once, fully offline.</p></header>
-    <div class="cs-split kai-stack-top">
-      {fig('nvidia-devkit-board.webp', 'Close-up of the NVIDIA Jetson Orin Nano Developer Kit board with its cooling fan', None, credit='Image: NVIDIA')}
-      <ul class="kai-stack" role="list">
-        <li><b>Vision</b><span>GPU face detection, YOLOv8 object detection, an 11-parameter face-tracking pipeline, gestures, and emotion.</span></li>
-        <li><b>Language</b><span>Google Gemma and Qwen3 running locally through Ollama, plus offline document Q&amp;A.</span></li>
-        <li><b>Voice</b><span>faster-whisper speech-to-text in Tagalog and English, and spoken replies with jaw sync.</span></li>
-        <li><b>Robotics</b><span>An Arduino Uno and servos over local Wi-Fi at 30+ updates a second, smoothed for natural movement.</span></li>
-        <li><b>Reliability</b><span>Tuned for the 8 GB board, with a camera fallback chain so Kai degrades gracefully instead of crashing.</span></li>
+    <div class="merge-block">
+      <h3 class="sub-h">Behind the scenes: what the highlight reel doesn&#8217;t show</h3>
+      <div class="kai-bts">
+        {fig('bts-tracker.webp', 'Debugging the face tracker: a servo in hand in front of a laptop running the tracking code', 'Debugging the tracker.')}
+        {fig('bts-servos.webp', 'Fitting servos by hand into the cardboard prototype in front of a laptop', 'Fitting servos by hand.')}
+      </div>
+      <ul class="kai-chal" role="list">
+        <li><b>3.3 V won&#8217;t drive a servo</b><span>Jetson GPIO tops out at 3.3 V and SG90s need about 5 V, so an Arduino became the bridge.</span></li>
+        <li><b>A dead servo mid-build</b><span>A faulty servo can buzz but not turn, leaving only one working servo.</span></li>
+        <li><b>Missing wires, day one</b><span>The first hardware test moved a day because parts weren&#8217;t checked beforehand.</span></li>
+        <li><b>Brownouts drop the link</b><span>Servos share the USB 5 V rail, and commands that are too fast can drop the connection.</span></li>
       </ul>
     </div>
-    <div class="merge-block">
-      <h3 class="sub-h">Why edge offline AI</h3>
-      <ul class="kai-why" role="list"><li><b>Works offline</b><span>Anywhere, even without internet</span></li><li><b>Faster responses</b><span>No round trip to the cloud</span></li><li><b>More privacy</b><span>Faces never leave the device</span></li><li><b>Uses less power</b><span>A compact edge computer</span></li><li><b>Better for our planet</b><span>Efficient models, local compute</span></li></ul>
+  </div></section>
+
+  <section class="section" aria-labelledby="kai-platform"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">The platform</span><h2 id="kai-platform">What is the Jetson Orin Nano?</h2>
+      <p>NVIDIA&#8217;s smallest edge-AI developer kit: a full computer the size of a paperback that runs modern neural networks locally, on the same CUDA, cuDNN, and TensorRT stack used in production edge deployments.</p></header>
+    <div class="cs-split kai-plat">
+      <ul class="kai-specs" role="list">
+        <li><b>1,024-core Ampere GPU</b><span>Plus 32 Tensor Cores and a dedicated deep learning accelerator (DLA).</span></li>
+        <li><b>Up to 67 TOPS (INT8)</b><span>Vision, speech, and an LLM at once. Full performance needs JetPack 6.2; earlier releases cap at 40.</span></li>
+        <li><b>8 GB LPDDR5, 102 GB/s</b><span>One shared pool for the CPU and GPU: the real ceiling for what fits.</span></li>
+        <li><b>6-core Arm Cortex-A78AE</b><span>The regular computer half, running Linux and the app code.</span></li>
+        <li><b>7 to 25 W, 5 nm</b><span>Sips power: Kai runs off a powerbank, no wall socket needed.</span></li>
+      </ul>
+      {fig('devkit-layout.webp', 'Labeled layout of the Jetson Orin Nano Developer Kit: cooling fan, power button, CSI camera interfaces, USB, DisplayPort, Ethernet, 40-pin GPIO, and M.2 slots', 'The developer kit, port by port.', credit='Diagram: NVIDIA')}
     </div>
+    <p class="kai-stackline"><span>The NVIDIA compute stack, all on one 8 GB module:</span><b>Ampere GPU</b><b>DLA</b><b>CUDA</b><b>TensorRT</b><b>cuDNN</b></p>
+  </div></section>
+
+  <section class="section" aria-labelledby="kai-edge"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Why edge</span><h2 id="kai-edge">Edge offline AI versus the cloud</h2></header>
+    <div class="tbl-wrap"><table class="reach-tbl kai-tbl"><caption>Cloud AI compared with edge AI on the Orin Nano</caption><thead><tr><th scope="col">Cloud AI</th><th scope="col">Edge AI on the Orin Nano</th></tr></thead><tbody>
+      <tr><td>Needs constant internet</td><td>Works fully offline, anywhere</td></tr>
+      <tr><td>Latency from network round trips</td><td>Real time, with no network hop</td></tr>
+      <tr><td>Data leaves the room</td><td>Nothing ever leaves the device</td></tr>
+      <tr><td>Fails where connectivity is poor</td><td>Works from a smart city to a far barangay</td></tr></tbody></table></div>
+    <p class="kai-builders"><b>For builders:</b> ship into venues, clinics, and far barangays with no per-call cost and no data leaving the room. The deployment target is a box you own, not an API you rent.</p>
+  </div></section>
+
+  <section class="section" aria-labelledby="kai-arch"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Architecture</span><h2 id="kai-arch">How it all runs on 8 GB</h2>
+      <p>Two independent pipelines run in one process, seeing and moving, and hearing and answering, sharing the jaw servo and the dashboard.</p></header>
+    <div class="kai-pipes">
+      <div><h3 class="sub-h">Seeing and moving</h3><ol class="kai-flow" role="list"><li><b>Camera</b><span>CSI or USB, 320 by 240</span></li><li><b>FaceMesh</b><span>15 fps, 11 parameters</span></li><li><b>PD control</b><span>Glides at 15 Hz</span></li><li><b>Servos</b><span>Pan and jaw, via Arduino</span></li></ol></div>
+      <div><h3 class="sub-h">Hearing and answering</h3><ol class="kai-flow" role="list"><li><b>Mic and wake word</b><span>&#8220;Hey Kai&#8221;, voice detection</span></li><li><b>Whisper</b><span>Speech to text</span></li><li><b>RAG and Gemma</b><span>Answers from its documents</span></li><li><b>Piper TTS</b><span>Speaks, jaw in sync</span></li></ol></div>
+    </div>
+    <p class="kai-builders"><b>Why an Arduino?</b> It acts only as a 5 V bridge. The Jetson&#8217;s GPIO pins top out at 3.3 V, which SG90 servos can&#8217;t reliably read.</p>
+  </div></section>
+
+  <section class="section" aria-labelledby="kai-mem"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">The real constraint</span><h2 id="kai-mem">8 GB of shared memory is the ceiling</h2>
+      <p>GPU memory comes out of the same 7.6 GB the operating system and every process use. It&#8217;s the tightest constraint in the system, and the one you discover by crashing into it.</p></header>
+    <div class="cs-split kai-mem">
+      <div><h3 class="sub-h">Memory budget, 7.6 GB total</h3><ul class="kai-bars" role="list">
+        <li style="--w:32%;--c:#76B900"><b>Gemma 2 (2B) via Ollama</b><span>2.4 GB</span></li>
+        <li style="--w:18%;--c:#4DA2FF"><b>Face tracking</b><span>1.4 GB</span></li>
+        <li style="--w:4%;--c:#EA641D"><b>Compressed swap</b><span>0.3 GB</span></li>
+        <li style="--w:28%;--c:#A57BFF"><b>Free, at steady state</b><span>2.1 GB</span></li></ul></div>
+      <div><h3 class="sub-h">What it forces</h3><ul class="doc-list">
+        <li><b>A 2B model, not bigger:</b> a 2 GB model stays resident; larger models push out the camera.</li>
+        <li><b>Context capped at 2,048 tokens:</b> raising it to 4,096 crashes the model runner.</li>
+        <li><b>Whisper on the CPU:</b> kept off CUDA to leave GPU memory for the LLM and vision.</li>
+        <li><b>Embeddings on the CPU:</b> retrieval runs on the CPU so it can&#8217;t compete for the GPU.</li></ul></div>
+    </div>
+  </div></section>
+
+  <section class="section" aria-labelledby="kai-expect"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Why it matters</span><h2 id="kai-expect">Expectations versus reality</h2>
+      <p>Edge AI on 8 GB is a systems problem, not a model problem. Almost every win came from measuring what the hardware actually did, not from what the datasheet promised.</p></header>
+    <div class="tbl-wrap"><table class="reach-tbl kai-tbl"><caption>What the team expected, and what actually happened</caption><thead><tr><th scope="col">What we expected</th><th scope="col">What actually happened</th></tr></thead><tbody>
+      <tr><td>A bigger LLM would give smarter replies</td><td>A 4B model pushed out the camera. A 2B model is the largest that fits alongside vision in 8 GB.</td></tr>
+      <tr><td>A longer context window would give longer memory</td><td>Going past 2,048 tokens crashes the runner. GPU residency, not RAM, is the wall.</td></tr>
+      <tr><td>Voice noise settings would make Kai sound livelier</td><td>Measured: they changed intonation less than the noise floor. Hypothesis dropped and logged.</td></tr>
+      <tr><td>The wake-word matcher was the weak link</td><td>Three bugs, none in the matcher. A 0.35-second floor was silently eating the word &#8220;hey&#8221;.</td></tr></tbody></table></div>
+    <p class="kai-builders"><b>For builders:</b> don&#8217;t trust the datasheet; measure on your board. The project changelog records the dropped ideas too, so you inherit the dead ends instead of repeating them.</p>
+  </div></section>
+
+  <section class="section" aria-labelledby="kai-journey"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">The journey</span><h2 id="kai-journey">From first servo to a shipping robot</h2>
+      <p>Built in eight weeks on one Orin Nano, then hardened live at events.</p></header>
+    <ol class="tl-grid kai-journey" role="list">
+      <li class="tl-phase" style="--c:#76B900"><span class="mh-when">Jun 2026 · Shipped</span><h3>Face tracking</h3><ul role="list"><li><b>FaceMesh pipeline and PD control</b><span>On a 15 Hz thread, with automatic USB driver loading.</span></li></ul></li>
+      <li class="tl-phase" style="--c:#4DA2FF"><span class="mh-when">Jul 2026 · Shipped</span><h3>Voice and RAG</h3><ul role="list"><li><b>Push-to-talk speech to text</b><span>Gemma 2 (2B) with offline document Q&amp;A and an editable persona.</span></li></ul></li>
+      <li class="tl-phase" style="--c:#A57BFF"><span class="mh-when">Late Jul 2026 · Shipped</span><h3>Hands-free</h3><ul role="list"><li><b>Piper voice and a &#8220;Hey Kai&#8221; wake word</b><span>An always-open mic, with the jaw synced to real audio.</span></li></ul></li>
+      <li class="tl-phase" style="--c:#F2C500"><span class="mh-when">Aug 2026 · Ongoing</span><h3>Hardening</h3><ul role="list"><li><b>Crash relaunch and fixes</b><span>Idle loop cut from 185 to 22 Hz, jaw timing and dialect fixes, 1,300+ tests.</span></li></ul></li>
+      <li class="tl-phase" style="--c:#EA641D"><span class="mh-when">Next · Planned</span><h3>CUDA and TensorRT</h3><ul role="list"><li><b>Move inference onto the GPU</b><span>To reclaim headroom for bigger workloads.</span></li></ul></li>
+      <li class="tl-phase" style="--c:#EC4899"><span class="mh-when">Future</span><h3>Level 2 autonomy</h3><ul role="list"><li><b>From reacting to acting</b><span>Multi-face awareness and richer on-device reasoning.</span></li></ul></li>
+    </ol>
   </div></section>
 
   <section class="section" aria-labelledby="kai-next"><div class="wrap">
-    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">What&#8217;s next</span><h2 id="kai-next">From face tracking to a robot that moves on its own</h2>
-      <p>Kai launched as a beta at DEVCON&#8217;s 17th anniversary. The roadmap goes deeper into the NVIDIA stack.</p></header>
-    <div class="kai-road">
-      <div><h3 class="sub-h">Next up</h3><ul class="doc-list"><li><b>Untethered:</b> battery power, so Kai runs anywhere.</li><li><b>Face-aware conversation:</b> Kai turns toward whoever is speaking.</li><li><b>TensorRT:</b> faster, leaner face tracking on the Jetson&#8217;s deep learning accelerator.</li></ul></div>
-      <div><h3 class="sub-h">On the wishlist</h3><ul class="doc-list"><li><b>NVIDIA Isaac Sim:</b> train and test Kai in a simulated world first.</li><li><b>NVIDIA Omniverse:</b> a real-time digital twin of Kai.</li><li><b>Multi-face tracking, ROS 2, and a &#8220;Hey Kai&#8221; wake word.</b></li></ul></div>
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">The handoff</span><h2 id="kai-next">Ideas for Cohort 5</h2>
+      <p>Same board, same offline-first constraint, new problems worth solving. Each idea builds on something Kai already proved.</p></header>
+    <ul class="pp-grid pp-grid--4" role="list">
+      <li class="pp" style="--c:#76B900"><h3>Self-driving bot</h3><p>A line- and obstacle-following rover, with a micro:bit handling motors and sensors and the Jetson doing the vision.</p><span class="kai-builds">Builds on: the servo bridge and PD control</span></li>
+      <li class="pp" style="--c:#4DA2FF"><h3>Taglish conversation</h3><p>Natural switching between Tagalog and English in one conversation, not two separate language modes.</p><span class="kai-builds">Builds on: RAG, persona, and delivery shaping</span></li>
+      <li class="pp" style="--c:#F2C500"><h3>Bisaya voice</h3><p>Cebuano and Bisaya understanding tuned per chapter, beyond canned filler lines.</p><span class="kai-builds">Builds on: the dialect-aware filler bank</span></li>
+      <li class="pp" style="--c:#EA641D"><h3>A Filipino voice</h3><p>Train a custom Filipino text-to-speech voice, since none ships for Tagalog, Filipino, or Cebuano today.</p><span class="kai-builds">Builds on: the Piper TTS pipeline</span></li>
+    </ul>
+    <p class="kai-links">Further out: NVIDIA Isaac Sim to train Kai in simulation first, and NVIDIA Omniverse for a real-time digital twin.</p>
+  </div></section>
+
+  <section class="section" aria-labelledby="kai-team"><div class="wrap">
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">The team</span><h2 id="kai-team">Who built Kai, and how to build on it</h2>
+      <p>Cohort 4 AI Engineering Interns, DEVCON Philippines.</p></header>
+    <div class="kai-team">
+      <ul class="kai-people" role="list">
+        <li><img src="{M('team-rhea.webp')}" alt="Rhea Perocho" loading="lazy"/><b>Rhea Perocho</b><span class="kai-role">Design and build</span><span>Designed and built Kai&#8217;s physical form: the cardboard body, the head, and the look that gives Kai its character.</span></li>
+        <li><img src="{M('team-jhondel.webp')}" alt="Jhondel Mellomida" loading="lazy"/><b>Jhondel Mellomida</b><span class="kai-role">Developer and hardware</span><span>Handled the electronics and code: wiring, servos, the Arduino bridge, and the software that makes Kai see, listen, and talk.</span></li>
+      </ul>
+      <div class="kai-oss">
+        <span class="eyebrow" style="color:var(--y)">Open source</span>
+        <h3 class="sub-h">Clone it, fork it, ship it</h3>
+        <ul class="doc-list"><li><b>Apache-2.0 licensed</b></li><li><b>1,300+ tests</b>, runnable with no hardware</li><li>Every constant annotated with the measurement behind it</li><li>Full wiring, pinouts, and parts list in the docs</li></ul>
+        <p><a class="btn-primary" href="https://github.com/Kai-Devcon/kai" target="_blank" rel="noopener">View Kai on GitHub<span class="sr-only"> (opens in a new tab)</span></a></p>
+        <p class="kai-builders"><b>For builders:</b> reproduce this exact build, read why every number is what it is, and stand on the dead ends instead of repeating them.</p>
+      </div>
     </div>
   </div></section>
 
@@ -160,7 +252,36 @@ def page_html(mode):
 </div>
 '''
 
-CSS = ('.kai-duo{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:16px;align-items:stretch}.kai-duo .cs-fig{margin:0;height:100%}.kai-duo .cs-fig img{width:100%;height:100%;max-height:520px;object-fit:cover}'
+def page_html(mode):
+    P = _page_html(mode)
+    idx = [m.start() for m in re.finditer(r'\n  <section class="(?:section[^"]*|page-cta|numbers)"', P)]
+    last = P.rindex('</section>') + len('</section>'); rows = [P[a:(idx[n + 1] if n + 1 < len(idx) else last)] for n, a in enumerate(idx)]
+    k = next(n for n, r in enumerate(rows) if 'class="numbers"' in r[:80]); out = []
+    for n, r in enumerate(rows):
+        if n <= k or 'page-cta' in r[:60]: out.append(r); continue
+        band = ((n - k - 1) % 2 == 1); o = re.match(r'\s*<section class="([^"]*)"', r); cls = re.sub(r'\s*\bband2\b', '', o.group(1))
+        out.append(r.replace(f'class="{o.group(1)}"', f'class="{cls.replace("section", "section band2", 1) if band else cls}"', 1))
+    return P[:idx[0]] + ''.join(out) + P[last:]
+
+CSS = ('.kai-specs{list-style:none;margin:0;padding:0;display:grid;gap:10px}.kai-specs li{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-left:4px solid #76B900}.kai-specs b{display:block;color:#fff}.kai-specs span{color:var(--text-secondary);font-size:.92rem;line-height:1.5}'
+       '.kai-plat{align-items:center}.kai-plat .cs-fig{margin:0;background:#fff;border-radius:18px;padding:12px}.kai-plat .cs-fig img{border-radius:10px}.kai-plat figcaption{color:#333}'
+       '.kai-stackline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:20px;color:var(--text-secondary)}.kai-stackline b{display:inline-flex;align-items:center;min-height:32px;padding:3px 12px;border-radius:999px;background:rgba(118,185,0,.16);border:1px solid rgba(118,185,0,.55);color:#B8E86A;font-size:.85rem}'
+       '.kai-tbl td,.kai-tbl th{text-align:left!important;vertical-align:top}.kai-tbl td:first-child{color:var(--text-secondary)}.kai-tbl td:last-child{color:#fff}'
+       '.kai-builders{margin-top:16px;padding:14px 18px;border-radius:14px;background:rgba(118,185,0,.08);border:1px solid rgba(118,185,0,.4);color:#fff}.kai-builders b{color:#B8E86A}'
+       '.kai-pipes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.kai-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;counter-reset:f}'
+       '.kai-flow li{position:relative;padding:12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line)}.kai-flow b{display:block;color:#fff;font-size:.92rem}.kai-flow span{color:var(--text-secondary);font-size:.8rem;line-height:1.4}'
+       '.kai-bars{list-style:none;margin:0;padding:0;display:grid;gap:10px}.kai-bars li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center}.kai-bars li::after{content:"";grid-column:1/-1;height:12px;border-radius:999px;background:linear-gradient(90deg,var(--c) var(--w),rgba(255,255,255,.08) var(--w))}.kai-bars b{color:#fff;font-size:.92rem}.kai-bars span{color:var(--text-secondary);font-weight:800;font-size:.86rem}'
+       '.kai-journey{grid-template-columns:repeat(3,minmax(0,1fr))}'
+       '.kai-bts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:14px}.kai-bts .cs-fig{margin:0}'
+       '.kai-chal{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.kai-chal li{padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-top:3px solid #EC4899}.kai-chal b{display:block;color:#fff;margin-bottom:4px}.kai-chal span{color:var(--text-secondary);font-size:.88rem;line-height:1.45}'
+       '.kai-builds{display:block;margin-top:auto;padding-top:8px;color:var(--y);font-size:.82rem;font-weight:800}'
+       '.kai-team{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:start}.kai-people{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}'
+       '.kai-people li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:20px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line)}.kai-people img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid #76B900}'
+       '.kai-people b{color:#fff;font-weight:900;font-size:1.05rem}.kai-role{color:var(--y);font-weight:800;font-size:.85rem}.kai-people span:last-child{color:var(--text-secondary);font-size:.9rem;line-height:1.5}'
+       '.kai-oss{padding:20px;border-radius:18px;background:rgba(118,185,0,.06);border:1px solid rgba(118,185,0,.4)}'
+       '@media (max-width:1000px){.kai-flow,.kai-chal{grid-template-columns:repeat(2,minmax(0,1fr))}.kai-journey{grid-template-columns:repeat(2,minmax(0,1fr))}.kai-pipes,.kai-team{grid-template-columns:minmax(0,1fr)}}'
+       '@media (max-width:560px){.kai-flow,.kai-chal,.kai-journey,.kai-bts,.kai-people{grid-template-columns:minmax(0,1fr)}}'
+       '.kai-duo{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:16px;align-items:stretch}.kai-duo .cs-fig{margin:0;height:100%}.kai-duo .cs-fig img{width:100%;height:100%;max-height:520px;object-fit:cover}'
        '.kai-credit{opacity:.7;font-size:.78rem;margin-left:6px}'
        '.kai-chip{display:inline-flex;align-items:center;min-height:30px;padding:3px 12px;border-radius:999px;background:rgba(118,185,0,.16);border:1px solid rgba(118,185,0,.6);color:#B8E86A;font-size:.85rem}.kai-chip--g{background:rgba(77,162,255,.14);border-color:rgba(77,162,255,.55);color:#9DCBFF}'
        '.kai-eps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}'
