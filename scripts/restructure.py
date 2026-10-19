@@ -12,6 +12,23 @@ SRC, OUT = sys.argv[1], sys.argv[2]
 
 # Old devcon.ph paths (and common aliases) -> new slug (+ optional #anchor). '' = homepage.
 REDIRECTS = {
+    # legacy devcon.ph page-sitemap addresses (audit, Oct 2026)
+    'campusambassador': 'campus',
+    'campus-devcon-summit-2024-tech-nexus': 'campus',
+    'devcon-climate-resilience-innovation-summit-2025': 'crest',
+    'news-2024-devcon-crest-philippines-launches-initiatives-for-climate-tech-innovation': 'crest',
+    'climate-bayanihan-devcon-dost-dlsu-climate-innovator-workshop-2025': 'crest',
+    'professional-developers-and-geeks-gather-for-devcon-pro-summit-on-october-20': 'pro-summit',
+    'summit2021': 'pro-summit',
+    'news-2024-devcon-philippines-and-icp-hub-philippines-partner-for-nationwide-smart-contract-code-camps': 'case-study-icp',
+    'devcon-kids-inventory': 'devcon-kids',
+    'support': 'partner',
+    'careers': 'jumpstart-internships',
+    'plus': 'attend',
+    'test-practice': 'chapters',
+    'home-beta-v2-2': '',
+    'homepage-beta-v2': '',
+    'hello-world': '',
     # renamed pages and old campaign/news URLs
     'she-2026': 'sheisdevcon', 'she': 'sheisdevcon', 'she-is-devcon': 'sheisdevcon', 'women-in-tech': 'sheisdevcon',
     'campussummit2023': 'case-study-campus-devcon-summit', 'campus-summit-2023': 'case-study-campus-devcon-summit', 'campus-summit': 'case-study-campus-devcon-summit',
@@ -24,7 +41,6 @@ REDIRECTS = {
     'icp': 'case-study-icp', 'isla-camp': 'case-study-icp',
     '2025-news-inaugural-ai-engineering-scholarship-launched-by-ai-academy-ph-in-collaboration-with-devcon-apper-cloudschool-indigo-research': 'ai',
     'ai-scholarship': 'ai', 'ai-scholarships': 'ai', 'scholarship': 'ai', 'scholarships': 'ai', 'certification': 'ai',
-    'climate-bayanihan-devcon-dost-dlsu-climate-innovator-workshop-2025': 'programs',
     'hour-of-ai': 'case-study-hour-of-ai', 'hour-of-code': 'case-study-hour-of-ai', 'kids': 'devcon-kids',
     'mindanao-ai-caravan': 'case-study-mindanao-ai-caravan', 'ai-angat': 'case-study-mindanao-ai-caravan', 'caravan': 'case-study-mindanao-ai-caravan',
     'code-camps': 'ai-code-camps', 'codecamps': 'ai-code-camps', 'barangay-ai': 'ai-code-camps',

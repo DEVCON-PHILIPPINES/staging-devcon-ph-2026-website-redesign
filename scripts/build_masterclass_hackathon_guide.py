@@ -41,7 +41,7 @@ PLAN = [
  ('Month 1 · Weeks 12 to 9', 'Set the foundation', '#71B405', [
    ('Define the goal and audience', 'Who is it for, what should they leave with, and how many seats.'),
    ('Pick the date and shortlist venues', 'Check academic calendars, holidays, and weather season.'),
-   ('Form the core team', 'Name an event director and every lead in the roles section.'),
+   ('Form the core team', 'The chapter president serves as event director and names every lead in the roles section.'),
    ('Draft the budget and funding plan', 'List costs, confirmed support, and who to approach.'),
    ('Open the event page', 'One official registration page for every attendee.')]),
  ('Month 2 · Weeks 8 to 5', 'Lock the essentials', '#A57BFF', [
@@ -77,7 +77,7 @@ TRANSITIONS = [('8:00 to 9:00 AM', 'Registration rush. Fully staff the desk and 
                ('3:00 PM', 'Pitching. Judges briefed and seated, scoring sheet ready, timer visible.'),
                ('4:00 PM onward', 'Awarding and close. Recognize partners, end on time, then pack up.')]
 ROLES = [
- ('Event director', '#F2C500', ['Owns the plan and the budget, with DEVCON HQ approval, and every on-the-ground decision', 'Assigns leads and runs weekly check-ins', 'Makes the go or no-go call', 'Single point of escalation on the day; arrives first for ingress']),
+ ('Event director: the chapter president', '#F2C500', ['Owns the plan and the budget, with DEVCON HQ approval, and every on-the-ground decision', 'Assigns leads and runs weekly check-ins', 'Makes the go or no-go call', 'Single point of escalation on the day; arrives first for ingress']),
  ('Program lead', '#A57BFF', ['Writes the run of show and host script', 'Confirms speakers, facilitators, parallel talks, and judges', 'Orders speaker tokens and hands them over right after each session', 'Leads the two dry runs and keeps the day on time']),
  ('Hackathon lead', '#71B405', ['Prepares the challenge brief, kit, rubric, and tool list', 'Sets per-team AI usage caps and sandboxed accounts', 'Runs the briefing, the build clock, the freeze, and the demo order', 'Briefs mentors and judges on the scoring']),
  ('Tech lead', '#4DA2FF', ['Tests projectors, screens, sound, and livestream the day before', 'Keeps a backup laptop, adapters, and offline copies of every slide', 'Confirms backup internet and power at key stations', 'Sets up check-in, scoring, and voting tools']),
@@ -187,7 +187,7 @@ def page_html(mode):
 
   <section class="section" aria-labelledby="mh-roles"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Roles</span><h2 id="mh-roles">Clear duties for every lead</h2>
-      <p>DEVCON HQ sets the guardrails; the local team runs the day. One name per role, and every lead also names a backup.</p></header>
+      <p>DEVCON HQ sets the guardrails, and the chapter president leads the day as event director. One name per role, and every lead also names a backup.</p></header>
     <ul class="mh-roles" role="list">{roles}</ul>
   </div></section>
 
