@@ -4,6 +4,9 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.21 | Oct 16, 2026, 7:29 PM PHT | Women in tech partnership case study; simpler location page with reopening status |
+| v2.20 | Oct 16, 2026, 7:13 PM PHT | Code camps feature visual; case study filters; event director role; new videos |
+| v2.19 | Oct 16, 2026, 7:09 PM PHT | Redirects for every legacy page address |
 | v2.18 | Oct 16, 2026, 6:57 PM PHT | Internship photos; hardware R&D case study deep dive |
 | v2.17 | Oct 14, 2026, 11:43 AM PHT | Hackathon best practice guide: national office role |
 | v2.16 | Oct 14, 2026, 11:30 AM PHT | Hackathon best practice guide moved to a shorter address |
