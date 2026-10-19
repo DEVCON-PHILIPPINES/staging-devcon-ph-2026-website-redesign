@@ -42,6 +42,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Ensure the Cloudflare Pages project exists
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT: ${{ vars.CLOUDFLARE_PROJECT }}
+        run: |
+          # Recreate the production project (same name, production branch main) if it was deleted.
+          if npx --yes wrangler@3 pages project list 2>/dev/null | grep -qw "$PROJECT"; then
+            echo "Pages project $PROJECT exists."
+          else
+            echo "::warning::Pages project $PROJECT not found; recreating it."
+            npx --yes wrangler@3 pages project create "$PROJECT" --production-branch main
+          fi
       - name: Deploy to Cloudflare Pages (production)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -59,7 +72,7 @@ jobs:
         run: |
           UA="Mozilla/5.0 (DEVCON deploy check)"
           expected=$(grep -o '<meta name="version" content="[^"]*"' docs/index.html | head -1 | sed 's/.*content="//;s/"//')
-          for i in $(seq 1 20); do
+          for i in $(seq 1 40); do
             v=$(curl -s -A "$UA" "$PROD_URL/?v=$RANDOM" | grep -o '<meta name="version" content="[^"]*"' | head -1 | sed 's/.*content="//;s/"//')
             [ "$v" = "$expected" ] && break; sleep 10
           done
