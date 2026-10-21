@@ -1,9 +1,10 @@
 <!doctype html>
 <!--
   DEVCON Philippines website
-  Version v2.21 · Updated Oct 16, 2026, 7:29 PM PHT
+  Version v2.22 · Updated Oct 21, 2026, 8:53 PM PHT
 
   Change log (newest first)
+  v2.22   Oct 21, 2026, 8:53 PM PHT    Region anchors; volunteer capacity note; link preview image; larger location names
   v2.21   Oct 16, 2026, 7:29 PM PHT    Women in tech partnership case study; simpler location page with reopening status
   v2.20   Oct 16, 2026, 7:13 PM PHT    Code camps feature visual; case study filters; event director role; new videos
   v2.19   Oct 16, 2026, 7:09 PM PHT    Redirects for every legacy page address
@@ -134,8 +135,8 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-+9qxSzQ0G/29ZlAbQlg+kQmcdzQBn+QmkTRUJCUUQEs=' 'sha256-2IpYCtDIjo4d8we+7/wJ4BAQ8LQNh8eCV4difVaOygM=' 'sha256-4zKmhDvBNxq6dKFbL4GzcJQOZLWuZBaAGVvZgdZUk/Q=' 'sha256-GPt+JUtupJdmqOQaqS5cJOEQ+qJ4ATaNAuevVY8i3vg=' 'sha256-HoKXGkXcHLPyOq9cKwpT3AfRTF3PGKURVIXHv8dvJF8=' 'sha256-Kh75R5k/CBR3pbljE+W0LH4CPdZNANrS0e/f6RCCc30=' 'sha256-OGtMSWzwPDu9fqrbRqIWl6zO2bL4KjdYhU52+UKgRN4=' 'sha256-ScVUVPUktJe/UURySxVVLRR4pOu7YCpmem31US/7EJc=' 'sha256-W+XD2LPuZ4Y4kn2hcPpP+22aesfEdYAFWUTYPEABJ/g=' 'sha256-ZUfR4zZckD8zIJtBeKm7536CAnocghPyJupQkMrnKJ0=' 'sha256-ed8TeAnJbXUO5fjplj3lKwqFOmuJAhvtK1fIDyZOwYU=' 'sha256-fVDQTdriVhwr6aHSUX+0PYA9S8LE71I1miUWaSzJXY4=' 'sha256-iIhj48LSNRji0gBLRC1kiw4aua9bmHPKAWC82Cczpwc=' 'sha256-jAh2Wwm678LLU46NhH6p38hraEFoBr4EoDJRscy6zU0=' 'sha256-wUbSmLQN6yy+j64BnXOGMXVM+SU2/eRZlC1JCdQlmFE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data:; frame-src https://www.openstreetmap.org https://docs.google.com https://accounts.google.com https://www.youtube-nocookie.com https://www.youtube.com https://www.tiktok.com; connect-src 'self'; manifest-src 'self'; media-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script>/* anti-clickjacking */if(window.top!==window.self){document.documentElement.style.display='none';try{window.top.location.replace(window.location.href);}catch(e){}}</script>
-<meta name="version" content="v2.21"/>
-<meta name="build-date" content="2026-10-16T19:29+08:00"/>
+<meta name="version" content="v2.22"/>
+<meta name="build-date" content="2026-10-21T20:53+08:00"/>
 <script>/* hold #anchor on arrival so it can be scrolled to smoothly */(function(){var h=location.hash;if(h&&h.length>1&&h.indexOf("#/")!==0){window.__pendingAnchor=h;try{history.scrollRestoration="manual";history.replaceState(history.state,"",location.pathname+location.search);}catch(e){}}})();</script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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"/>
@@ -155,7 +156,7 @@
 <meta property="og:title" content="ICP × DEVCON: Biggest Smart Contracts Code Camp Series in PH"/>
 <meta property="og:description" content="200,000+ online reach, 700+ developers in hands-on camps, and 500+ smart contracts deployed across the Philippines with ISLA CAMP (ICP HUB Philippines)."/>
 <meta property="og:url" content="https://devcon.ph/case-studies/icp/"/>
-<meta property="og:image" content="https://devcon.ph/og-devcon-17.png"/>
+<meta property="og:image" content="https://prod-devcon-ph-2026-website-redesign.pages.dev/og-devcon-17.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="DEVCON Philippines: Engineering an AI-Ready Nation"/>
@@ -163,8 +164,8 @@
 <meta name="twitter:site" content="@devconph"/>
 <meta name="twitter:title" content="ICP × DEVCON: Biggest Smart Contracts Code Camp Series in PH"/>
 <meta name="twitter:description" content="200,000+ online reach, 700+ developers in hands-on camps, and 500+ smart contracts deployed across the Philippines with ISLA CAMP (ICP HUB Philippines)."/>
-<meta name="twitter:image" content="https://devcon.ph/og-devcon-17.png"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "NGO", "@id": "https://devcon.ph/#org", "name": "DEVCON Philippines", "legalName": "DevConnect Philippines Inc.", "alternateName": ["DEVCON PH", "Developers Connect Philippines"], "url": "https://devcon.ph/", "logo": "https://devcon.ph/og-devcon-17.png", "foundingDate": "2009", "nonprofitStatus": "Nonprofit", "email": "hello@devcon.ph", "description": "The Philippines' largest and longest-running volunteer tech community: an SEC-registered, BIR-compliant non-profit with 13 locations nationwide.", "address": {"@type": "PostalAddress", "addressLocality": "Makati", "addressRegion": "Metro Manila", "addressCountry": "PH"}, "location": [{"@type": "Place", "name": "DEVCON HQ Office, Makati", "address": {"@type": "PostalAddress", "addressLocality": "Makati", "addressRegion": "Metro Manila", "addressCountry": "PH"}}, {"@type": "Place", "name": "DEVCON HQ Office, Ortigas", "address": {"@type": "PostalAddress", "addressLocality": "Pasig", "addressRegion": "Metro Manila", "addressCountry": "PH"}}], "areaServed": {"@type": "Country", "name": "Philippines"}, "knowsAbout": ["Software development", "Artificial intelligence", "AI fluency", "Open-source AI", "Blockchain smart contracts", "Developer relations", "Computer science education", "Women in tech"], "sameAs": ["https://www.facebook.com/DevConPH/", "https://www.instagram.com/devconph/", "https://www.youtube.com/user/DevConPH", "https://www.linkedin.com/company/2394085/", "https://www.tiktok.com/@devconph", "https://www.threads.net/@devconph", "https://x.com/devconph"]}, {"@type": "Article", "@id": "https://devcon.ph/case-studies/icp/#page", "url": "https://devcon.ph/case-studies/icp/", "name": "ICP × DEVCON: Biggest Smart Contracts Code Camp Series in PH", "description": "200,000+ online reach, 700+ developers in hands-on camps, and 500+ smart contracts deployed across the Philippines with ISLA CAMP (ICP HUB Philippines).", "inLanguage": "en-PH", "isPartOf": {"@id": "https://devcon.ph/#website"}, "publisher": {"@id": "https://devcon.ph/#org"}, "dateModified": "2026-09-23", "about": {"@id": "https://devcon.ph/#org"}, "headline": "ICP × DEVCON: Biggest Smart Contracts Code Camp Series in PH", "image": "https://devcon.ph/og-devcon-17.png", "author": {"@id": "https://devcon.ph/#org"}, "datePublished": "2026-09-23"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devcon.ph/"}, {"@type": "ListItem", "position": 2, "name": "DevRel Case Studies", "item": "https://devcon.ph/"}, {"@type": "ListItem", "position": 3, "name": "ICP", "item": "https://devcon.ph/case-studies/icp/"}]}]}</script>
+<meta name="twitter:image" content="https://prod-devcon-ph-2026-website-redesign.pages.dev/og-devcon-17.png"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "NGO", "@id": "https://devcon.ph/#org", "name": "DEVCON Philippines", "legalName": "DevConnect Philippines Inc.", "alternateName": ["DEVCON PH", "Developers Connect Philippines"], "url": "https://devcon.ph/", "logo": "https://prod-devcon-ph-2026-website-redesign.pages.dev/og-devcon-17.png", "foundingDate": "2009", "nonprofitStatus": "Nonprofit", "email": "hello@devcon.ph", "description": "The Philippines' largest and longest-running volunteer tech community: an SEC-registered, BIR-compliant non-profit with 13 locations nationwide.", "address": {"@type": "PostalAddress", "addressLocality": "Makati", "addressRegion": "Metro Manila", "addressCountry": "PH"}, "location": [{"@type": "Place", "name": "DEVCON HQ Office, Makati", "address": {"@type": "PostalAddress", "addressLocality": "Makati", "addressRegion": "Metro Manila", "addressCountry": "PH"}}, {"@type": "Place", "name": "DEVCON HQ Office, Ortigas", "address": {"@type": "PostalAddress", "addressLocality": "Pasig", "addressRegion": "Metro Manila", "addressCountry": "PH"}}], "areaServed": {"@type": "Country", "name": "Philippines"}, "knowsAbout": ["Software development", "Artificial intelligence", "AI fluency", "Open-source AI", "Blockchain smart contracts", "Developer relations", "Computer science education", "Women in tech"], "sameAs": ["https://www.facebook.com/DevConPH/", "https://www.instagram.com/devconph/", "https://www.youtube.com/user/DevConPH", "https://www.linkedin.com/company/2394085/", "https://www.tiktok.com/@devconph", "https://www.threads.net/@devconph", "https://x.com/devconph"]}, {"@type": "Article", "@id": "https://devcon.ph/case-studies/icp/#page", "url": "https://devcon.ph/case-studies/icp/", "name": "ICP × DEVCON: Biggest Smart Contracts Code Camp Series in PH", "description": "200,000+ online reach, 700+ developers in hands-on camps, and 500+ smart contracts deployed across the Philippines with ISLA CAMP (ICP HUB Philippines).", "inLanguage": "en-PH", "isPartOf": {"@id": "https://devcon.ph/#website"}, "publisher": {"@id": "https://devcon.ph/#org"}, "dateModified": "2026-09-23", "about": {"@id": "https://devcon.ph/#org"}, "headline": "ICP × DEVCON: Biggest Smart Contracts Code Camp Series in PH", "image": "https://prod-devcon-ph-2026-website-redesign.pages.dev/og-devcon-17.png", "author": {"@id": "https://devcon.ph/#org"}, "datePublished": "2026-09-23"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devcon.ph/"}, {"@type": "ListItem", "position": 2, "name": "DevRel Case Studies", "item": "https://devcon.ph/"}, {"@type": "ListItem", "position": 3, "name": "ICP", "item": "https://devcon.ph/case-studies/icp/"}]}]}</script>
 <meta name="theme-color" content="#070430"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -2188,7 +2189,7 @@ html.vol-lock,html.vol-lock body{overflow:hidden}
 @media (max-width:420px){.partner-grid--major,.partner-grid--program{--cols:2}}
 .ft-version{margin:0;font-size:.75rem;color:var(--text-muted);width:100%}
 .chc{scroll-margin-top:110px}
-</style>
+.dcc-card[id]{scroll-margin-top:96px}.ch-h1 .ch-meet{display:block;font-size:clamp(20px,2.4vw,32px);line-height:1.2;letter-spacing:0;color:var(--y);margin-bottom:4px}.ch-h1 .ch-name{display:block;font-size:clamp(46px,10vw,128px);line-height:.95;letter-spacing:-.02em}.ft-regions h3 a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;min-width:44px;padding-right:6px}.ft-regions h3 a:hover{color:var(--y);text-decoration:underline}</style>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -2358,7 +2359,7 @@ html.vol-lock,html.vol-lock body{overflow:hidden}
         <h2 id="ft-chapters"><a class="ft-h-link" href="../../locations/">Nationwide Locations</a></h2>
         <div class="ft-regions">
           <div>
-            <h3>Luzon</h3>
+            <h3><a href="../../locations/#luzon">Luzon</a></h3>
             <ul class="ft-list">
               <li><a href="../../locations/manila/">Manila</a></li>
               <li><a href="../../locations/laguna/">Laguna</a></li>
@@ -2367,7 +2368,7 @@ html.vol-lock,html.vol-lock body{overflow:hidden}
             </ul>
           </div>
           <div>
-            <h3>Visayas</h3>
+            <h3><a href="../../locations/#visayas">Visayas</a></h3>
             <ul class="ft-list">
               <li><a href="../../locations/cebu/">Cebu</a></li>
               <li><a href="../../locations/iloilo/">Iloilo</a></li>
@@ -2377,7 +2378,7 @@ html.vol-lock,html.vol-lock body{overflow:hidden}
             </ul>
           </div>
           <div>
-            <h3>Mindanao</h3>
+            <h3><a href="../../locations/#mindanao">Mindanao</a></h3>
             <ul class="ft-list">
               <li><a href="../../locations/davao/">Davao</a></li>
               <li><a href="../../locations/cagayandeoro/">CDO</a></li>

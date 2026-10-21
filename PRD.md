@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.21 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.22 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -157,6 +157,10 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **Hermes case study:** two Shorts (9gR-vHVfEUk, eZ5_JyFjUo8), autoplay muted, after the numbers.
 - **#SHEISDEVCON x Austrian Business Agency case study** (`/case-studies/sheisdevcon-aba/`): two years of ABA support, Manila (Letran Move code camp, March 28, 2026), Iloilo (She Builds Tech Summit with FWTF), Cebu (ask-us-anything), and Davao (SUBAY, University of Mindanao, October 14, 2026, ABA first Mindanao stop); keynote Raphael Rey Bacolod; Short zqPUb6E7dX0; champion team from Ateneo de Davao; speakers, quotes, partners. First card on DevRel Case Studies.
 - **Bacolod location page:** six sections; reopening status (team reapplying, DEVCON HQ vetting); removed numbers, map, and visitor guide.
+- **Region anchors:** /locations/#luzon, #visayas, #mindanao on the region cards; /luzon/, /visayas/, /mindanao/ and /locations/<region>/ 301 there; Locations intro and footer region headings link to them.
+- **Volunteer capacity note** (once per page, inside existing copy): homepage, Locations, Invite, and each chapter page: capacity to accept invitations or open chapters depends on volunteer leaders, partner resources, and strategic national priorities.
+- **Link preview image:** every page uses the DEVCON 17 Engineering an AI-Ready Nation image at the production address (switch to devcon.ph at the domain cutover).
+- **Chapter headings:** "Meet DEVCON" small, the location name large.
 - **All YouTube embeds autoplay muted** (autoplay=1, mute=1, playsinline=1, allow="autoplay"), sitewide, privacy-enhanced player.
 - **Video:** the NEXUS final-stop video (YouTube, privacy-enhanced embed, muted autoplay, centered) on the Mindanao AI Caravan case study; "DEVCON at 16: Inspiring the Next Generation with DEVCON Kids" (SdVjWd_4MUE) on the DEVCON Kids page, and "Why Sui partnered with DEVCON Philippines" (JDe6L8peLvk) plus a second video, "Sui and DEVCON Philippines launch Build Beyond" (F4I92at8iF0), on the Sui case study; a DEVCON TikTok embed is ready in scripts/sui_tiktok_embed.html for when that video is public and embeddable (CSP frame-src already allows www.tiktok.com); CSP allows only youtube-nocookie.com and youtube.com frames.
 - **Section rhythm:** location pages alternate section backgrounds; related pairs (events + snapshots, stats + awards, quality over quantity + volunteer-led line) share a band; 72 px desktop / 48 px mobile spacing.
