@@ -443,5 +443,17 @@
 /homepage-beta-v2/ / 301
 /hello-world / 301
 /hello-world/ / 301
+/luzon /locations/#luzon 301
+/luzon/ /locations/#luzon 301
+/locations/luzon /locations/#luzon 301
+/locations/luzon/ /locations/#luzon 301
+/visayas /locations/#visayas 301
+/visayas/ /locations/#visayas 301
+/locations/visayas /locations/#visayas 301
+/locations/visayas/ /locations/#visayas 301
+/mindanao /locations/#mindanao 301
+/mindanao/ /locations/#mindanao 301
+/locations/mindanao /locations/#mindanao 301
+/locations/mindanao/ /locations/#mindanao 301
 /index.html / 301
 /.well-known/security.txt /security.txt 200
