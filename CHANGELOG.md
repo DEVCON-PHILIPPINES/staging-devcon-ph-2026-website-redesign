@@ -4,6 +4,7 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.26 | Oct 22, 2026, 10:00 AM PHT | Volunteer page; sign-up buttons; chapter application; softer capacity wording |
 | v2.25 | Oct 21, 2026, 9:03 PM PHT | Invite page host checklist |
 | v2.24 | Oct 21, 2026, 9:00 PM PHT | Volunteer roles and national office versus chapter leaders |
 | v2.23 | Oct 21, 2026, 8:58 PM PHT | Trust and gold standard descriptors |

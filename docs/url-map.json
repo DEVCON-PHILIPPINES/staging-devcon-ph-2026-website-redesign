@@ -54,7 +54,8 @@
   "/programs/jumpstart-internships/",
   "/programs/kids/",
   "/programs/pro-summit/",
-  "/programs/sheisdevcon/"
+  "/programs/sheisdevcon/",
+  "/volunteer/"
  ],
  "redirects": {
   "/17years/": "/about/17years/",
@@ -178,7 +179,6 @@
   "/internships/": "/programs/jumpstart-internships/",
   "/jumpstart/": "/programs/jumpstart-internships/",
   "/ojt/": "/programs/jumpstart-internships/",
-  "/volunteer/": "/playbook/volunteers-guide/",
   "/volunteers/": "/playbook/volunteers-guide/",
   "/be-a-volunteer/": "/playbook/volunteers-guide/",
   "/volunteering-basics/": "/playbook/volunteers-guide/",

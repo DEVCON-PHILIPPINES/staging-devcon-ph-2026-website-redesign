@@ -53,7 +53,7 @@ REDIRECTS = {
     'our-story': 'about', 'about-us': 'about', 'history': 'about', 'organization': 'about', 'the-organization': 'about', 'who-we-are': 'about',
     'locations': 'chapters', 'regional-chapters': 'chapters', 'chapter': 'chapters', 'start-a-chapter': 'invite', 'invite-devcon': 'invite',
     'internship': 'jumpstart-internships', 'internships': 'jumpstart-internships', 'jumpstart': 'jumpstart-internships', 'ojt': 'jumpstart-internships',
-    'volunteer': 'volunteers-guide', 'volunteers': 'volunteers-guide', 'be-a-volunteer': 'volunteers-guide', 'volunteering-basics': 'volunteers-guide',
+    'volunteers': 'volunteers-guide', 'be-a-volunteer': 'volunteers-guide', 'volunteering-basics': 'volunteers-guide',
     'code-of-conduct': 'code-of-conduct-for-national-and-chapter-officers-and-volunteers', 'anti-harassment-policy': 'code-of-conduct-for-national-and-chapter-officers-and-volunteers',
     'privacy': 'standard-privacy-and-safespace-consent', 'privacy-policy': 'standard-privacy-and-safespace-consent', 'safe-space': 'standard-privacy-and-safespace-consent',
     'event-participation-guidelines': 'campus-events-guidelines', 'child-protection': 'child-protection-policy',

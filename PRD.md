@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.25 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.26 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -57,7 +57,7 @@ The site is a static, self-contained HTML build. It is a visual and content blue
 
 **Homepage order:** hero, logo carousel ("Trusted by leaders and pioneers"), locations map (static on mobile), numbers, about, 17 years, explore, Recent news 3×3 ("What we've been building", led by the Mindanao AI Caravan as major news), Be part of DEVCON 17 hub, FAQ, partners, DEVCON+ banner.
 
-**Pages (55):**
+**Pages (56):**
 
 - **Core:** Home (`/`), About DEVCON Philippines (`about`, org history and "a community, not an events company"), DEVCON 17 manifesto (`17years`, Engineering an AI-Ready Nation and the 17-year anniversary), Leadership (`leadership`), Programs (`programs`), Attend (`attend`), Partner (`partner`), Invite DEVCON (`invite`), AI Scholarships (`ai`), Jumpstart Internships (`jumpstart-internships`), AI code camps (`ai-code-camps`).
 - **Locations:** Locations hub (`chapters`) and 13 location pages: manila, laguna, legazpi, pampanga, cebu, iloilo, bohol, bacolod, tacloban, davao, iligan, cagayandeoro, bukidnon.
@@ -165,6 +165,10 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **Volunteer roles** (inside existing copy): homepage and About say event volunteers, chapter officers, and national leaders are all DEVCON volunteers paying it forward.
 - **National office versus chapters:** Leadership intro, Area program leaders (national leaders at DEVCON HQ), and chapter presidents (local chapter leaders) say who does what; Locations says local officers lead chapters while the DEVCON HQ national office sets standards, trains leaders, and approves partnerships.
 - **Invite host checklist:** speakers are volunteers, never paid; the host provides, or identifies partners for, speaker transportation, meals, accommodations, and a token, plus venue and date, screen and sound, internet and power, audience, water and snacks, a contact person, and photo consent. Each item needs an owner before confirmation.
+- **Volunteer page** (`/volunteer/`, no longer a redirect): roles with time commitment (event volunteer, mentor or speaker, chapter officer, national volunteer at DEVCON HQ), what happens after you sign up, merch not guaranteed, and how to join an existing chapter as an officer (#chapter-officer). Leadership "Become a chapter officer" links there.
+- **Sign-up buttons:** Locations "Sign up to volunteer" (was "Volunteer on DEVCON+"); a Sign up to volunteer button in each chapter Volunteer card.
+- **Chapter application:** Invite #start-a-chapter has an "Apply to start a chapter" email with a prefilled template.
+- **Capacity wording:** the count of chapters not renewed is no longer shown on Locations or Invite.
 - **All YouTube embeds autoplay muted** (autoplay=1, mute=1, playsinline=1, allow="autoplay"), sitewide, privacy-enhanced player.
 - **Video:** the NEXUS final-stop video (YouTube, privacy-enhanced embed, muted autoplay, centered) on the Mindanao AI Caravan case study; "DEVCON at 16: Inspiring the Next Generation with DEVCON Kids" (SdVjWd_4MUE) on the DEVCON Kids page, and "Why Sui partnered with DEVCON Philippines" (JDe6L8peLvk) plus a second video, "Sui and DEVCON Philippines launch Build Beyond" (F4I92at8iF0), on the Sui case study; a DEVCON TikTok embed is ready in scripts/sui_tiktok_embed.html for when that video is public and embeddable (CSP frame-src already allows www.tiktok.com); CSP allows only youtube-nocookie.com and youtube.com frames.
 - **Section rhythm:** location pages alternate section backgrounds; related pairs (events + snapshots, stats + awards, quality over quantity + volunteer-led line) share a band; 72 px desktop / 48 px mobile spacing.
