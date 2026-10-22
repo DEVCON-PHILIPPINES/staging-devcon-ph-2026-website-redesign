@@ -75,8 +75,11 @@ def main():
         if is_redirect(s):
             redirects += 1
             m = re.search(r'url=([^"]+)"', s)
-            tgt = resolve(f, m.group(1)) if m else None
-            if not tgt or tgt not in ids: errors.append(f'{f}: redirect target missing ({m.group(1) if m else "none"})')
+            raw = m.group(1) if m else ''
+            url, _, frag = raw.partition('#')
+            tgt = resolve(f, url) if m else None
+            if not tgt or tgt not in ids: errors.append(f'{f}: redirect target missing ({raw or "none"})')
+            elif frag and frag not in ids[tgt]: errors.append(f'{f}: redirect anchor #{frag} not found on {tgt}')
             continue
         if f == '404.html': continue
         pages += 1

@@ -4,6 +4,10 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.25 | Oct 21, 2026, 9:03 PM PHT | Invite page host checklist |
+| v2.24 | Oct 21, 2026, 9:00 PM PHT | Volunteer roles and national office versus chapter leaders |
+| v2.23 | Oct 21, 2026, 8:58 PM PHT | Trust and gold standard descriptors |
+| v2.22 | Oct 21, 2026, 8:53 PM PHT | Region anchors; volunteer capacity note; link preview image; larger location names |
 | v2.21 | Oct 16, 2026, 7:29 PM PHT | Women in tech partnership case study; simpler location page with reopening status |
 | v2.20 | Oct 16, 2026, 7:13 PM PHT | Code camps feature visual; case study filters; event director role; new videos |
 | v2.19 | Oct 16, 2026, 7:09 PM PHT | Redirects for every legacy page address |
