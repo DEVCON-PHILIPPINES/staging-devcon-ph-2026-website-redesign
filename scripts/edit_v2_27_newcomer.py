@@ -129,10 +129,10 @@ def menu_edit(s, f):
     if b < 0 or e < 0: return s
     bump('7 programs menu'); return s[:b] + menu_html(f) + s[e + len('\n          </div>'):]
 
-# ---------- 9) plainer words, and Partner Results instead of DevRel Case Studies ----------
-WORDS = [('>DevRel Case Studies<', '>Partner Results<'), ('See all DevRel case studies', 'See all partner results'), ('See DevRel case studies', 'See partner results'),
-         ('Read the DevRel case studies', 'Read the partner results'), ('Read our DevRel case studies', 'Read our partner results'), ("'case-studies':'DevRel case studies'", "'case-studies':'Partner results'"),
-         ('"name": "DevRel Case Studies"', '"name": "Partner Results"'), ('Guidelines, loopers, and the Playbook AI', 'Guidelines, event videos, and the Playbook AI assistant'),
+# ---------- 9) plainer words, and Partner Success Stories instead of DevRel Case Studies ----------
+WORDS = [('>DevRel Case Studies<', '>Partner Success Stories<'), ('See all DevRel case studies', 'See all partner success stories'), ('See DevRel case studies', 'See partner success stories'),
+         ('Read the DevRel case studies', 'Read the partner success stories'), ('Read our DevRel case studies', 'Read our partner success stories'), ("'case-studies':'DevRel case studies'", "'case-studies':'Partner success stories'"),
+         ('"name": "DevRel Case Studies"', '"name": "Partner Success Stories"'), ('Guidelines, loopers, and the Playbook AI', 'Guidelines, event videos, and the Playbook AI assistant'),
          ('Standard event loopers for pre-show and background visuals.', 'Standard looping event videos (loopers) for pre-show and background visuals.'),
          ('Ask your Chapter President for your chapter&#8217;s Notebook AI.', 'Ask your Chapter President for your chapter&#8217;s Notebook AI, the Playbook AI assistant built on Google NotebookLM.'),
          ('turns chapter leaders into AI orchestrators.', 'turns chapter leaders into AI orchestrators: leaders who direct AI tools to get real work done.'),

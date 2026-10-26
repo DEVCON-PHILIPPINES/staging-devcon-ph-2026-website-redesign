@@ -4,6 +4,7 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.29 | Oct 26, 2026, 10:54 PM PHT | Partner Success Stories; right-aligned menu with search |
 | v2.28 | Oct 26, 2026, 10:33 PM PHT | Site search; hackathon guide lessons from past runs |
 | v2.27 | Oct 22, 2026, 11:44 AM PHT | Newcomer review: chapter teams and contact, featured events, clear labels and counts, programs by audience, coverage, plain words, Start here |
 | v2.26 | Oct 22, 2026, 10:00 AM PHT | Volunteer page; sign-up buttons; chapter application; softer capacity wording |
