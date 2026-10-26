@@ -2,7 +2,7 @@
 # and a small client script (docs/assets/search.js). No third-party services.
 import re, glob, os, json, html
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-SECTION = {'': 'Home', 'about': 'About', 'programs': 'Programs', 'locations': 'Locations', 'case-studies': 'Partner Results', 'playbook': 'Community Playbook',
+SECTION = {'': 'Home', 'about': 'About', 'programs': 'Programs', 'locations': 'Locations', 'case-studies': 'Partner Success Stories', 'playbook': 'Community Playbook',
            'attend': 'Attend', 'invite': 'Invite DEVCON', 'partner': 'Partner', 'volunteer': 'Volunteer', 'start-here': 'Start here'}
 EXTRA = {  # extra keywords so plain words and provinces find the right page
  '/locations/manila/': 'metro manila ncr makati ortigas intramuros', '/locations/legazpi/': 'albay bicol', '/locations/bacolod/': 'negros occidental negros',
@@ -64,7 +64,7 @@ JS = r'''/* DEVCON site search: keyword search over search-index.json, no third 
   function snippet(d,toks){var src=d.d&&toks.some(function(t){return norm(d.d).indexOf(t)>-1})?d.d:d.x,n=norm(src),pos=-1;toks.some(function(t){pos=n.indexOf(t);return pos>-1});
     var a=Math.max(0,pos-60),s=(a>0?'… ':'')+src.slice(a,a+170)+(src.length>a+170?' …':'');return esc(s).replace(new RegExp('('+toks.map(function(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}).join('|')+')','gi'),'<mark>$1</mark>')}
   function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  var POP=[['Find an event','attend/'],['Volunteer','volunteer/'],['Find your chapter','locations/'],['Programs','programs/'],['Start here','start-here/'],['Partner Results','case-studies/'],['Invite DEVCON','invite/'],['Partner with us','partner/']];
+  var POP=[['Find an event','attend/'],['Volunteer','volunteer/'],['Find your chapter','locations/'],['Programs','programs/'],['Start here','start-here/'],['Partner Success Stories','case-studies/'],['Invite DEVCON','invite/'],['Partner with us','partner/']];
   function build(){ui=document.createElement('div');ui.className='ss';ui.hidden=true;ui.innerHTML=
     '<div class="ss-back" data-ss-close></div><div class="ss-box" role="dialog" aria-modal="true" aria-label="Search DEVCON"><div class="ss-bar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'+
     '<input class="ss-in" type="search" placeholder="Search programs, chapters, events, guides…" aria-label="Search the site" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="ss-list"/>'+
@@ -91,10 +91,11 @@ JS = r'''/* DEVCON site search: keyword search over search-index.json, no third 
 '''
 BTN = ('<button class="nav-search" type="button" data-search-open aria-label="Search the site" title="Search (/)">'
        '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>')
-CSS = ('.nav-search{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:8px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;flex:none}'
-       '.nav-search:hover{border-color:var(--y);color:var(--y)}.nav-search:focus-visible{outline:3px solid var(--y);outline-offset:2px}.nav-search svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}'
-       '.nav .wrap{display:flex;align-items:center}.nav .nav-links{order:2}.nav-search{order:3;margin-left:12px}'
-       '@media (max-width:1100px){.nav-search{margin-left:auto;margin-right:8px;order:2}.nav .burger{order:3}}'
+CSS = ('.nav-search{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:8px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;flex:none;transition:border-color .15s,color .15s,background .15s}'
+       '.nav-search:hover{border-color:var(--y);color:var(--y);background:rgba(242,197,0,.1)}.nav-search:focus-visible{outline:3px solid var(--y);outline-offset:2px}.nav-search svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}'
+       '.nav .wrap{display:flex;align-items:center}'
+       '@media (min-width:1001px){.nav .wrap{justify-content:flex-start}.nav .nav-links{order:2;margin-left:auto}.nav-search{order:3;margin-left:14px}}'
+       '@media (max-width:1000px){.nav-search{margin-left:auto;margin-right:8px;order:2}.nav .burger{order:3}}'
        '.ss{position:fixed;inset:0;z-index:9999;display:flex;justify-content:center;align-items:flex-start;padding:min(12vh,96px) 16px 16px}.ss[hidden]{display:none}html.ss-open{overflow:hidden}'
        '.ss-back{position:absolute;inset:0;background:rgba(5,3,30,.72);backdrop-filter:blur(4px)}'
        '.ss-box{position:relative;width:min(720px,100%);max-height:calc(100vh - 2*min(12vh,96px));display:flex;flex-direction:column;border-radius:20px;background:#120d4a;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 100px rgba(0,0,0,.6);overflow:hidden}'

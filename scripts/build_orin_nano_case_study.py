@@ -46,7 +46,7 @@ def _page_html(mode):
     return f'''<div class="page" data-page="{SPA}"{hidden}>
   <header class="page-hero page-hero--apc">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="{'../../' if mode == 'docs' else '#/'}">Home</a><span aria-hidden="true">/</span><a href="{L('case-studies')}">DevRel Case Studies</a><span aria-hidden="true">/</span><span aria-current="page">DEVCON Studios x NVIDIA</span></nav>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{'../../' if mode == 'docs' else '#/'}">Home</a><span aria-hidden="true">/</span><a href="{L('case-studies')}">Partner Success Stories</a><span aria-hidden="true">/</span><span aria-current="page">DEVCON Studios x NVIDIA</span></nav>
       <span class="eyebrow" style="color:var(--y)">Partner case study · DEVCON Studios x NVIDIA Jetson Orin Nano</span>
       <h1 id="{SPA}-title">From unboxing to R&amp;D showcase: building Kai in public on NVIDIA Jetson Orin Nano</h1>
       <p class="cs-years"><span>2026 · Beta at DEVCON 17</span></p>
@@ -239,7 +239,7 @@ def _page_html(mode):
   <section class="section band2 cs-discover" aria-labelledby="{SPA}-discover"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">More results</span><h2 id="{SPA}-discover">Discover other case studies and impactful results</h2></header>
     <ul class="disc-grid" role="list">{disc_html}</ul>
-    <p style="margin-top:18px"><a class="pp-link" href="{L('case-studies')}">See all DevRel case studies</a></p>
+    <p style="margin-top:18px"><a class="pp-link" href="{L('case-studies')}">See all partner success stories</a></p>
   </div></section>
 
   <section class="page-cta">

@@ -85,6 +85,8 @@ def chapter_edit(P, c):
 REGION = {'Luzon': ('4 locations', '4 active chapters'), 'Visayas': ('5 locations', '2 active chapters · 3 volunteer communities'),
           'Mindanao': ('4 locations', '3 active chapters · 1 volunteer community')}
 def map_edit(s, f):
+    return _menu_only(s)
+def _map_edit_rolled_back(s, f):
     for r, (cnt, sub) in REGION.items():
         s, k = re.subn(rf'<span class="dcc-region">{r}</span><span class="dcc-count">\d+ Chapters?</span></div>',
                        f'<span class="dcc-region">{r}</span><span class="dcc-count">{cnt}</span></div><p class="dcc-sub">{sub}</p>', s); bump('5 map region counts', k)
@@ -98,6 +100,9 @@ def map_edit(s, f):
     s = s.replace('<p class="dd-note"><sup>*</sup> Local tech community network, no active chapter officers.</p>',
                   '<p class="dd-note"><em class="dd-vc">Community</em> Volunteer community: a local tech network without active chapter officers yet. 13 locations: 9 active chapters and 4 volunteer communities.</p>')
     return s
+def _menu_only(s):
+    s = re.sub(r'<span class="dd-name">([^<]+)<sup>\*</sup></span>', r'<span class="dd-name">\1<em class="dd-vc">Community</em></span>', s)
+    return s.replace('<p class="dd-note"><sup>*</sup> Local tech community network, no active chapter officers.</p>', '<p class="dd-note"><em class="dd-vc">Community</em> Volunteer community: a local tech network without active chapter officers yet. 13 locations: 9 active chapters and 4 volunteer communities.</p>')
 MAP_CSS = ('.dcc-sub{margin:-2px 0 8px;color:var(--text-secondary);font-size:.82rem}'
            '.dcc-tag{display:inline-flex;align-items:center;margin-left:8px;padding:1px 8px;border-radius:999px;font-size:.66rem;font-weight:800;letter-spacing:.02em;vertical-align:middle;white-space:nowrap}'
            '.dcc-tag--ch{background:rgba(113,180,5,.16);color:#B8E86A;border:1px solid rgba(113,180,5,.45)}.dcc-tag--vc{background:rgba(255,255,255,.06);color:#d6d3ef;border:1px dashed rgba(255,255,255,.4)}'
@@ -129,10 +134,10 @@ def menu_edit(s, f):
     if b < 0 or e < 0: return s
     bump('7 programs menu'); return s[:b] + menu_html(f) + s[e + len('\n          </div>'):]
 
-# ---------- 9) plainer words, and Partner Results instead of DevRel Case Studies ----------
-WORDS = [('>DevRel Case Studies<', '>Partner Results<'), ('See all DevRel case studies', 'See all partner results'), ('See DevRel case studies', 'See partner results'),
-         ('Read the DevRel case studies', 'Read the partner results'), ('Read our DevRel case studies', 'Read our partner results'), ("'case-studies':'DevRel case studies'", "'case-studies':'Partner results'"),
-         ('"name": "DevRel Case Studies"', '"name": "Partner Results"'), ('Guidelines, loopers, and the Playbook AI', 'Guidelines, event videos, and the Playbook AI assistant'),
+# ---------- 9) plainer words, and Partner Success Stories instead of DevRel Case Studies ----------
+WORDS = [('>DevRel Case Studies<', '>Partner Success Stories<'), ('See all DevRel case studies', 'See all partner success stories'), ('See DevRel case studies', 'See partner success stories'),
+         ('Read the DevRel case studies', 'Read the partner success stories'), ('Read our DevRel case studies', 'Read our partner success stories'), ("'case-studies':'DevRel case studies'", "'case-studies':'Partner success stories'"),
+         ('"name": "DevRel Case Studies"', '"name": "Partner Success Stories"'), ('Guidelines, loopers, and the Playbook AI', 'Guidelines, event videos, and the Playbook AI assistant'),
          ('Standard event loopers for pre-show and background visuals.', 'Standard looping event videos (loopers) for pre-show and background visuals.'),
          ('Ask your Chapter President for your chapter&#8217;s Notebook AI.', 'Ask your Chapter President for your chapter&#8217;s Notebook AI, the Playbook AI assistant built on Google NotebookLM.'),
          ('turns chapter leaders into AI orchestrators.', 'turns chapter leaders into AI orchestrators: leaders who direct AI tools to get real work done.'),
