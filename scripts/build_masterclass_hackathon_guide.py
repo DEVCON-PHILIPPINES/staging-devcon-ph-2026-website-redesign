@@ -12,7 +12,7 @@ TALK = 'mailto:hello@devcon.ph?subject=' + quote('Planning a whole-day AI Master
 
 import re as _re
 def _icon(n, label):
-    s = open(f'/tmp/acc/{n}.svg').read(); d = _re.search(r'<path d="([^"]+)"', s).group(1)
+    s = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'icons', f'{n}.svg')).read(); d = _re.search(r'<path d="([^"]+)"', s).group(1)
     return f'<svg class="tlogo" viewBox="0 0 24 24" role="img" aria-label="{label}"><path fill="currentColor" d="{d}"/></svg>'
 _CODE = '<svg class="tlogo" viewBox="0 0 24 24" role="img" aria-label="{l}"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>'
 _ROUTE = '<svg class="tlogo" viewBox="0 0 24 24" role="img" aria-label="{l}"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h6l4 6-4 6H4M14 12h6M17 9l3 3-3 3"/></svg>'
@@ -32,9 +32,9 @@ TOOLS = [
    (_icon('vercel','Vercel'), 'Vercel', 'https://vercel.com', 'Deploy a live demo link in minutes')]),
 ]
 CHECK = [
- ('Four weeks out', ['Venue, rooms, and date confirmed in writing', 'Speakers, facilitators, and judges confirmed', 'Registration open, with separate masterclass and hackathon sign-ups', 'Prints and merch ordered']),
- ('One week out', ['Volunteer training done; every lead has a backup', 'Pre-install session held for participants', 'Hackathon kit, rubric, and per-team usage caps ready', 'Headcount locked with the venue and caterer']),
- ('Day before', ['Stage, sound, screens, and livestream tested at the venue', 'Backup internet, power, and offline slides ready', 'Registration desk, QR check-in, and signage set up', 'Weather checked and go or no-go decided']),
+ ('Four weeks out', ['Venue, rooms, and date confirmed in writing', 'Speakers, facilitators, and judges confirmed', 'Registration open, with separate masterclass and hackathon sign-ups', 'Prints and merch ordered', 'Written budget approval before any perk is announced']),
+ ('One week out', ['Volunteer training done; every lead has a backup', 'Pre-install session held for participants', 'Hackathon kit, rubric, and per-team usage caps ready', 'Headcount locked with the venue and caterer', 'Venue security access list submitted and verified', 'Meals confirmed, with enough break time on site', 'One email primer sent with every key detail']),
+ ('Day before', ['Stage, sound, screens, and livestream tested at the venue', 'Backup internet, power, and offline slides ready', 'Registration desk, QR check-in, and signage set up', 'Weather checked and go or no-go decided', 'Certificates, trophies, and partner prizes counted against the awards list']),
  ('Event day', ['Team briefing at call time', 'Run of show, script, and timer with the host', 'Partners recognized at opening and closing', 'Speaker tokens handed over, debrief held, venue cleared']),
 ]
 PLAN = [
@@ -43,8 +43,11 @@ PLAN = [
    ('Pick the date and shortlist venues', 'Check academic calendars, holidays, and weather season.'),
    ('Form the core team', 'The chapter president serves as event director and names every lead in the roles section.'),
    ('Draft the budget and funding plan', 'List costs, confirmed support, and who to approach.'),
-   ('Open the event page', 'One official registration page for every attendee.')]),
+   ('Open the event page', 'One official registration page for every attendee.'),
+   ('Start one master tracker', 'A single timeline for every committee: deadlines, owners, and status in one place.')]),
  ('Month 2 · Weeks 8 to 5', 'Lock the essentials', '#A57BFF', [
+   ('Send partner proposals early', 'Give sponsors enough time to review and offer technical or financial support.'),
+   ('Get written budget approval', 'Before announcing any perk, prize, or giveaway that needs funding.'),
    ('Confirm the venue in writing', 'Main hall, breakout rooms for the build, power, and internet.'),
    ('Confirm speakers and facilitators', 'Morning modules, parallel afternoon talks, and judges.'),
    ('Prepare the hackathon kit', 'Challenge brief, tools list, sandbox, rubric, and usage caps.'),
@@ -77,19 +80,19 @@ TRANSITIONS = [('8:00 to 9:00 AM', 'Registration rush. Fully staff the desk and 
                ('3:00 PM', 'Pitching. Judges briefed and seated, scoring sheet ready, timer visible.'),
                ('4:00 PM onward', 'Awarding and close. Recognize partners, end on time, then pack up.')]
 ROLES = [
- ('Event director: the chapter president', '#F2C500', ['Owns the plan and the budget, with DEVCON HQ approval, and every on-the-ground decision', 'Assigns leads and runs weekly check-ins', 'Makes the go or no-go call', 'Single point of escalation on the day; arrives first for ingress']),
- ('Program lead', '#A57BFF', ['Writes the run of show and host script', 'Confirms speakers, facilitators, parallel talks, and judges', 'Orders speaker tokens and hands them over right after each session', 'Leads the two dry runs and keeps the day on time']),
+ ('Event director: the chapter president', '#F2C500', ['Owns the plan and the budget, with DEVCON HQ approval, and every on-the-ground decision', 'Assigns leads and runs weekly check-ins', 'Makes the go or no-go call', 'Single point of escalation on the day; arrives first for ingress', 'Keeps one master tracker that every committee updates']),
+ ('Program lead', '#A57BFF', ['Writes the run of show and host script', 'Confirms speakers, facilitators, parallel talks, and judges', 'Orders speaker tokens and hands them over right after each session', 'Leads the two dry runs and keeps the day on time', 'Owns the awards list: certificates, trophies, and partner prizes']),
  ('Hackathon lead', '#71B405', ['Prepares the challenge brief, kit, rubric, and tool list', 'Sets per-team AI usage caps and sandboxed accounts', 'Runs the briefing, the build clock, the freeze, and the demo order', 'Briefs mentors and judges on the scoring']),
  ('Tech lead', '#4DA2FF', ['Tests projectors, screens, sound, and livestream the day before', 'Keeps a backup laptop, adapters, and offline copies of every slide', 'Confirms backup internet and power at key stations', 'Sets up check-in, scoring, and voting tools']),
- ('Registration lead', '#EA641D', ['Sets up separate sign-ups for the masterclass and the hackathon', 'Confirms the final headcount with the venue five days before', 'Prepares QR check-in, name tags, attendance sheets, and signage', 'Writes the welcome-desk script, from the gate to the seat']),
- ('Logistics lead', '#EC4899', ['Books rooms, tables, chairs, power strips, and cable management', 'Orders tarps, prints, lanyards, and stickers early, with extras', 'Checks aircon and ventilation, and sets up a quiet call room', 'Leads ingress and pack-up']),
- ('Food lead', '#F2C500', ['Locks the caterer and menu early', 'Orders 10 to 15% buffer food and water for everyone', 'Plans drinks and snacks for the volunteer team', 'Confirms dinner numbers if there is a community dinner']),
+ ('Registration lead', '#EA641D', ['Sets up separate sign-ups for the masterclass and the hackathon', 'Confirms the final headcount with the venue five days before', 'Prepares QR check-in, name tags, attendance sheets, and signage', 'Writes the welcome-desk script, from the gate to the seat', 'Uses a registration tool with automated reminders and confirmations', 'Sends one comprehensive email primer instead of many notices']),
+ ('Logistics lead', '#EC4899', ['Books rooms, tables, chairs, power strips, and cable management', 'Orders tarps, prints, lanyards, and stickers early, with extras', 'Checks aircon and ventilation, and sets up a quiet call room', 'Leads ingress and pack-up', 'Submits the venue security access list at least a week before']),
+ ('Food lead', '#F2C500', ['Locks the caterer and menu early, and plans meals on site so breaks run on time', 'Orders 10 to 15% buffer food and water for everyone', 'Plans drinks and snacks for the volunteer team', 'Confirms dinner numbers if there is a community dinner']),
  ('VIP and ushers lead', '#A57BFF', ['Confirms guest travel, pickup, and accommodation', 'Prepares each VIP’s itinerary and remarks timing', 'Assigns an usher to every VIP on the day', 'Makes sure partners are recognized at opening and closing']),
  ('Documentation and social lead', '#71B405', ['Assigns a photographer and videographer', 'Schedules pre-event teasers and speaker spotlights', 'Covers the day live with approved captions only', 'Delivers the recap album, reel, and case study material']),
- ('Volunteers lead', '#4DA2FF', ['Recruits, assigns, and trains every volunteer', 'Shares the contact list and call time', 'Rotates breaks so no post is left unattended', 'Collects volunteer feedback for the debrief']),
- ('Finance and admin', '#EA641D', ['Tracks the budget and approves spending', 'Handles partner agreements and paperwork', 'Keeps receipts and liquidates after the event', 'Reports actuals in the impact report']),
+ ('Volunteers lead', '#4DA2FF', ['Recruits, assigns, and trains every volunteer', 'Shares the contact list and call time', 'Rotates breaks so no post is left unattended', 'Collects volunteer feedback for the debrief', 'Recruits dedicated logistics and creative volunteers so leads can manage']),
+ ('Finance and admin', '#EA641D', ['Tracks the budget, approves spending, and confirms written approval before perks are announced', 'Handles partner agreements and paperwork', 'Keeps receipts and liquidates after the event', 'Reports actuals in the impact report']),
 ]
-HQ_ROLE = '<li class="mh-role mh-role--hq" style="--c:#F2C500"><span class="mh-hq-tag">National office</span><h3>DEVCON HQ</h3><ul role="list"><li><b>Budget approval:</b> reviews and approves the event budget and any changes to it</li><li><b>Sponsors alignment:</b> aligns partners and sponsors with DEVCON standards, and approves partner recognition</li><li><b>Training:</b> trains the event director, leads, and facilitators before the day</li><li><b>Strategic approvals:</b> signs off on the program, partnerships, branding, and public announcements</li></ul></li>'
+HQ_ROLE = '<li class="mh-role mh-role--hq" style="--c:#F2C500"><span class="mh-hq-tag">National office</span><h3>DEVCON HQ</h3><ul role="list"><li><b>Budget approval:</b> reviews and approves the event budget and any changes to it</li><li><b>Sponsors alignment:</b> aligns partners and sponsors with DEVCON standards, and approves partner recognition</li><li><b>Training:</b> trains the event director, leads, and facilitators before the day</li><li><b>Strategic approvals:</b> signs off on the program, partnerships, branding, and public announcements</li><li><b>Chapter and HQ alignment:</b> clear channels and realistic expectations that balance national standards with local volunteer capacity</li></ul></li>'
 RISKS = [
  ('Severe weather or flooding', 'High', 'Monitor official weather and disaster advisories 48 hours out. Name a backup indoor venue. Decide go or no-go at least 24 hours before and tell everyone.'),
  ('Venue rooms or capacity fall through', 'Medium', 'Get rooms confirmed in writing. Keep an alternative room or layout on standby.'),
@@ -100,12 +103,34 @@ RISKS = [
  ('Wrong headcount', 'Medium', 'Lock numbers five days before with the venue and caterer. Order buffer food.'),
  ('Late start or overrun', 'Medium', 'Strict start time, short focused talks, buffers in the run of show, and a host who enforces time.'),
  ('Budget shortfall', 'Medium', 'Line up partners early and track spending weekly. Keep a priority list of what to cut first.'),
+ ('Entry delays at the venue', 'Medium', 'Submit and verify the security access list at least a week before, for attendees and staff.'),
+ ('Perks promised without budget', 'Medium', 'Announce perks and prizes only after written budget approval.'),
  ('Safety and conduct', 'Always on', 'Brief everyone on the Code of Conduct and the Privacy and Safe Space standard. Follow the Child Protection Policy if minors attend.'),
 ]
 DECISIONS = [('Go or no-go on weather', '24 hours before', 'Postpone if official advisories warn of severe weather'),
              ('Final hackathon team count', '3 days before', 'Proceed with confirmed teams'),
              ('Headcount and dinner lock', '5 days before', 'Cap at the confirmed number'),
              ('Speaker backup plan', '4 days before', 'Switch to a panel format')]
+WORKED = [('Strong audience engagement', 'Participants stayed attentive and involved through the masterclass and the rapid hackathon.'),
+          ('Teamwork across committees', 'Organizers took initiative and supported one another across their areas.'),
+          ('Every team shipped', 'All teams built, demoed, and pitched a working prototype within the time limit.'),
+          ('Attendance beat the targets', 'Turnout exceeded targets for attendees, hackathon teams, and partner organizations.'),
+          ('Quick adaptation on site', 'Marshals and room leads talked fast to fix issues and adjust the schedule.'),
+          ('Engaging hosts', 'Hosts kept the energy high, ran smooth transitions, and filled gaps during speaker changes.'),
+          ('Wider partnerships', 'Stronger ties with industry, schools, tech communities, and government.'),
+          ('Happy partners', 'Partners and sponsors were satisfied and keen to support future runs.'),
+          ('Diverse participants', 'Balanced gender representation, with talent from many schools and tech groups.'),
+          ('Smooth registration', 'On-site check-in ran well despite the registration tool&#8217;s limits.')]
+IMPROVE = [('Venue security clearance', 'Submit and verify the access list at least one week before, to avoid entry delays.'),
+           ('Budget approval first', 'Get written budget approval before advertising perks that need funding.'),
+           ('Earlier partner outreach', 'Send proposals early so sponsors can review and offer support.'),
+           ('Planned meals', 'Confirm meals ahead and allow enough break time, so no off-site meal runs disrupt the day.'),
+           ('More volunteers', 'Recruit dedicated logistics and creative volunteers so leads can focus on managing.'),
+           ('An awards lead', 'Give one person a checklist for certificates, trophies, and partner prizes.'),
+           ('A better registration tool', 'Use one with a clearer interface, automated reminders, and confirmations.'),
+           ('Chapter and HQ alignment', 'Agree on clear channels and realistic expectations for local volunteer capacity.'),
+           ('One master tracker', 'Keep a single timeline for every committee&#8217;s deadlines and owners.'),
+           ('One email primer', 'Send all key details in one complete email instead of many notices.')]
 PROVEN = ['A mandatory briefing for every volunteer before the day', 'Pre-event hype posts and speaker spotlights', 'Tokens for every speaker and guest',
           'A livestream, tested at the venue', 'Water for every attendee, and buffer food', 'Backup internet and power at key stations',
           'Short, focused talks and an early end time', 'Prizes shown quietly, so the focus stays on learning', 'Diverse speakers and inclusive teams',
@@ -131,6 +156,8 @@ def page_html(mode):
     risks = ''.join(f'<tr><th scope="row">{r}</th><td><span class="mh-lvl {lvl(l)}">{l}</span></td><td>{m}</td></tr>' for r, l, m in RISKS)
     dec = ''.join(f'<tr><th scope="row">{d}</th><td>{w}</td><td>{x}</td></tr>' for d, w, x in DECISIONS)
     proven = ''.join(f'<li>{p}</li>' for p in PROVEN)
+    worked = ''.join(f'<li><b>{t}</b><span>{d}</span></li>' for t, d in WORKED)
+    improve = ''.join(f'<li><b>{t}</b><span>{d}</span></li>' for t, d in IMPROVE)
     watch = ''.join(f'<li><b>{w}</b><span>{f}</span></li>' for w, f in WATCH)
     tools = ''.join(f'<h3 class="sub-h mh-tgroup">{g}</h3><ul class="tool-logos" role="list">' + ''.join(
         f'<li>{svg}<b><a href="{u}" target="_blank" rel="noopener">{n}<span class="sr-only"> (opens in a new tab)</span></a></b><span>{d}</span></li>' for svg, n, u, d in items) + '</ul>' for g, items in TOOLS)
@@ -208,7 +235,11 @@ def page_html(mode):
   </div></section>
 
   <section class="section band2" aria-labelledby="mh-best"><div class="wrap">
-    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Best practices</span><h2 id="mh-best">Lessons from past runs</h2></header>
+    <header class="sec-head"><span class="eyebrow" style="color:var(--y)">Best practices</span><h2 id="mh-best">Lessons from past runs</h2><p>From the debriefs of past masterclass and hackathon days.</p></header>
+    <div class="kai-road mh-lessons">
+      <div><h3 class="sub-h">What worked well</h3><ul class="mh-ok" role="list">{worked}</ul></div>
+      <div><h3 class="sub-h">What to improve next time</h3><ul class="mh-watch" role="list">{improve}</ul></div>
+    </div>
     <div class="kai-road">
       <div><h3 class="sub-h">Proven practices to carry forward</h3><ul class="doc-list mh-proven">{proven}</ul></div>
       <div><h3 class="sub-h">Watch-outs to avoid</h3><ul class="mh-watch" role="list">{watch}</ul></div>
@@ -240,7 +271,9 @@ def page_html(mode):
 </div>
 '''
 
-CSS = ('.mh-role--hq{grid-column:1/-1;background:linear-gradient(135deg,rgba(242,197,0,.10),rgba(120,8,255,.08));border-color:rgba(242,197,0,.45)}.mh-role--hq ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}.mh-hq-tag{display:inline-block;margin-bottom:6px;padding:2px 10px;border-radius:999px;background:rgba(242,197,0,.16);border:1px solid rgba(242,197,0,.55);color:var(--y);font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.mh-role--hq li b{color:#fff}@media (max-width:640px){.mh-role--hq ul{grid-template-columns:minmax(0,1fr)}}'
+CSS = ('.kai-road{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}@media (max-width:760px){.kai-road{grid-template-columns:minmax(0,1fr)}}'
+       '.mh-lessons{margin-bottom:24px}.mh-ok{list-style:none;margin:0;padding:0;display:grid;gap:8px}.mh-ok li{padding:10px 14px;border-radius:12px;background:rgba(113,180,5,.08);border:1px solid rgba(113,180,5,.4)}.mh-ok b{display:block;color:#fff}.mh-ok span{color:var(--text-secondary);font-size:.9rem}'
+       '.mh-role--hq{grid-column:1/-1;background:linear-gradient(135deg,rgba(242,197,0,.10),rgba(120,8,255,.08));border-color:rgba(242,197,0,.45)}.mh-role--hq ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}.mh-hq-tag{display:inline-block;margin-bottom:6px;padding:2px 10px;border-radius:999px;background:rgba(242,197,0,.16);border:1px solid rgba(242,197,0,.55);color:var(--y);font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.mh-role--hq li b{color:#fff}@media (max-width:640px){.mh-role--hq ul{grid-template-columns:minmax(0,1fr)}}'
        '.tool-logos{list-style:none;margin:0 0 8px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}'
        '.tool-logos li{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;align-items:center;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line)}'
        '.tool-logos .tlogo{grid-row:span 2;width:36px;height:36px;color:#fff}.tool-logos b a{color:#fff;font-weight:900;text-decoration:underline;text-decoration-color:var(--y);text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}.tool-logos b a:hover{color:var(--y)}.tool-logos span{color:var(--text-secondary);font-size:.86rem;line-height:1.4}'
@@ -287,7 +320,13 @@ if True:
 open(f, 'w', encoding='utf-8').write(h)
 # 3) single-file build
 c = glob.glob('combined/*.html')[0]; t = open(c, encoding='utf-8').read()
-t = re.sub(r'<div class="page" data-page="masterclass-hackathon-guide".*?</div>\n(?=</main>)', '', t, flags=re.S); t = re.sub(r'<li class="pp" style="--c:#4DA2FF"><span class="pp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5".*?</a></li>\s*', '', t, flags=re.S)
+def _drop(t, key):
+    a = t.find(f'<div class="page" data-page="{key}"')
+    if a < 0: return t
+    b = t.find('<div class="page"', a + 10); m = t.find('</main>', a)
+    b = m if b < 0 or m < b else b
+    return t[:a] + t[b:]
+t = _drop(_drop(t, SPA), 'masterclass-hackathon-guide'); t = re.sub(r'<li class="pp" style="--c:#4DA2FF"><span class="pp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5".*?</a></li>\s*', '', t, flags=re.S)
 if True:
     i = t.index('</main>'); t = t[:i] + page_html('spa') + t[i:]
     a = t.index('<div class="page" data-page="playbook"'); j = t.index('</a></li>', t.index('href="#/brand-kit"', a)) + len('</a></li>')

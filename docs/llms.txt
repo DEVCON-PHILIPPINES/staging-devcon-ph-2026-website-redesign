@@ -51,3 +51,4 @@ Key facts:
 - [DEVCON 17 manifesto](https://devcon.ph/about/17years/): Engineering an AI-Ready Nation
 - [DEVCON Masterclass and Hackathon Best Practice and Checklist](https://devcon.ph/playbook/hackathon-best-practice/): tools, plan, program, roles, risks, and checklist
 - [Brand Kit](https://devcon.ph/playbook/brand-kit/): logos, colors, key visuals, boilerplate
+- [New to DEVCON? Start here](https://devcon.ph/start-here/): chapters, DEVCON+, volunteering, programs, and a glossary
