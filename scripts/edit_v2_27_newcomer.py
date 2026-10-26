@@ -85,6 +85,8 @@ def chapter_edit(P, c):
 REGION = {'Luzon': ('4 locations', '4 active chapters'), 'Visayas': ('5 locations', '2 active chapters · 3 volunteer communities'),
           'Mindanao': ('4 locations', '3 active chapters · 1 volunteer community')}
 def map_edit(s, f):
+    return _menu_only(s)
+def _map_edit_rolled_back(s, f):
     for r, (cnt, sub) in REGION.items():
         s, k = re.subn(rf'<span class="dcc-region">{r}</span><span class="dcc-count">\d+ Chapters?</span></div>',
                        f'<span class="dcc-region">{r}</span><span class="dcc-count">{cnt}</span></div><p class="dcc-sub">{sub}</p>', s); bump('5 map region counts', k)
@@ -98,6 +100,9 @@ def map_edit(s, f):
     s = s.replace('<p class="dd-note"><sup>*</sup> Local tech community network, no active chapter officers.</p>',
                   '<p class="dd-note"><em class="dd-vc">Community</em> Volunteer community: a local tech network without active chapter officers yet. 13 locations: 9 active chapters and 4 volunteer communities.</p>')
     return s
+def _menu_only(s):
+    s = re.sub(r'<span class="dd-name">([^<]+)<sup>\*</sup></span>', r'<span class="dd-name">\1<em class="dd-vc">Community</em></span>', s)
+    return s.replace('<p class="dd-note"><sup>*</sup> Local tech community network, no active chapter officers.</p>', '<p class="dd-note"><em class="dd-vc">Community</em> Volunteer community: a local tech network without active chapter officers yet. 13 locations: 9 active chapters and 4 volunteer communities.</p>')
 MAP_CSS = ('.dcc-sub{margin:-2px 0 8px;color:var(--text-secondary);font-size:.82rem}'
            '.dcc-tag{display:inline-flex;align-items:center;margin-left:8px;padding:1px 8px;border-radius:999px;font-size:.66rem;font-weight:800;letter-spacing:.02em;vertical-align:middle;white-space:nowrap}'
            '.dcc-tag--ch{background:rgba(113,180,5,.16);color:#B8E86A;border:1px solid rgba(113,180,5,.45)}.dcc-tag--vc{background:rgba(255,255,255,.06);color:#d6d3ef;border:1px dashed rgba(255,255,255,.4)}'

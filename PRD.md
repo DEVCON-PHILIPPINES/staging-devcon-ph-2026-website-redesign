@@ -170,7 +170,7 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **Chapter application:** Invite #start-a-chapter has an "Apply to start a chapter" email with a prefilled template.
 - **Capacity wording:** the count of chapters not renewed is no longer shown on Locations or Invite.
 - **Chapter pages:** "Meet the DEVCON [City] team" (president card plus a contact card: Messenger, Facebook, hello@devcon.ph for partnerships); "Featured events" (was Notable events) with "See upcoming events on DEVCON+"; "Covers: [province]" chip (volunteer communities show "Area"); non-renewal count removed.
-- **Counts and labels:** 13 locations = 9 active chapters + 4 volunteer communities; map region cards show locations plus a breakdown; "Active chapter" and "Volunteer community" tags replace asterisks (map and menu); growth areas grey and dashed with "Invite DEVCON here".
+- **Counts and labels:** 13 locations = 9 active chapters + 4 volunteer communities (Locations intro, menu note); the menu marks volunteer communities with a "Community" tag. The map itself was rolled back in v2.29 to its v2.26 design (N Chapters per region, asterisk, original legend).
 - **Programs menu by audience:** For kids and teachers, For students, For professionals, For chapter leaders; each program once.
 - **Attend:** "Featured events" without dates, plus "See upcoming events on DEVCON+"; step 2 points to DEVCON+.
 - **Invite:** province coverage line (active chapter covers its province; otherwise the host covers speaker costs; volunteer-community provinces not covered for now); non-renewal count shown on Start a chapter.
