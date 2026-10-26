@@ -30,7 +30,7 @@ def page_html(mode):
     return f'''<div class="page" data-page="{SPA}"{hidden}>
   <header class="page-hero page-hero--apc">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="{home}">Home</a><span aria-hidden="true">/</span><a href="{L('cs')}">DevRel Case Studies</a><span aria-hidden="true">/</span><span aria-current="page">#SHEISDEVCON × ABA</span></nav>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{home}">Home</a><span aria-hidden="true">/</span><a href="{L('cs')}">Partner Success Stories</a><span aria-hidden="true">/</span><span aria-current="page">#SHEISDEVCON × ABA</span></nav>
       <span class="eyebrow" style="color:var(--y)">Partner case study · #SHEISDEVCON × Austrian Business Agency</span>
       <h1 id="{SPA}-title">Nationwide #SHEISDEVCON code camps and hackathons, supported by the Austrian Business Agency</h1>
       <p class="cs-years"><span>2025–2026 · Two years · Manila to Mindanao</span></p>
@@ -137,7 +137,7 @@ def page_html(mode):
   <section class="section cs-discover" aria-labelledby="{SPA}-discover"><div class="wrap">
     <header class="sec-head"><span class="eyebrow" style="color:var(--y)">More results</span><h2 id="{SPA}-discover">Discover other case studies and impactful results</h2></header>
     <ul class="disc-grid" role="list">{disc_html}</ul>
-    <p style="margin-top:18px"><a class="pp-link" href="{L('cs')}">See all DevRel case studies</a></p>
+    <p style="margin-top:18px"><a class="pp-link" href="{L('cs')}">See all partner success stories</a></p>
   </div></section>
 
   <section class="page-cta">
