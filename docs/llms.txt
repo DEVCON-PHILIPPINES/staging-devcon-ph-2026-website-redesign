@@ -52,3 +52,4 @@ Key facts:
 - [DEVCON Masterclass and Hackathon Best Practice and Checklist](https://devcon.ph/playbook/hackathon-best-practice/): tools, plan, program, roles, risks, and checklist
 - [Brand Kit](https://devcon.ph/playbook/brand-kit/): logos, colors, key visuals, boilerplate
 - [New to DEVCON? Start here](https://devcon.ph/start-here/): chapters, DEVCON+, volunteering, programs, and a glossary
+- [Frontier AI, where Mindanao&#8217;s builders are](https://devcon.ph/case-studies/mindanao-ai-fluency-hackathons/): AI Fluency Masterclass and Hackathons in Bukidnon, Iligan, and Davao

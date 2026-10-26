@@ -25,7 +25,7 @@ def page(mode):
              ('Volunteer community', 'A local DEVCON network without active chapter officers yet, working toward becoming a chapter.'),
              ('DEVCON HQ', 'The national office in Ortigas that sets standards, trains chapter leaders, and approves partnerships.'),
              ('DEVCON+', 'Our member platform for events, registration, and points.'),
-             ('DevRel', 'Short for developer relations: how tech companies work with developer communities. Our <a class="pp-link" href="RESULTS">Partner Results</a> show what those partnerships achieved.'),
+             ('DevRel', 'Short for developer relations: how tech companies work with developer communities. Our <a class="pp-link" href="RESULTS">Partner Success Stories</a> show what those partnerships achieved.'),
              ('Code camp', 'A hands-on coding workshop where you build something real in a day or less.'),
              ('Hackathon', 'A time-boxed build challenge where teams create a working project and demo it.'),
              ('Move smart contracts', 'Programs written in Move, the language of the Sui blockchain, that run on-chain. See the <a class="pp-link" href="SUI">Sui code camps</a>.'),
