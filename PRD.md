@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.27 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.28 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -176,6 +176,8 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **Invite:** province coverage line (active chapter covers its province; otherwise the host covers speaker costs; volunteer-community provinces not covered for now); non-renewal count shown on Start a chapter.
 - **Plain words:** "Partner Results" replaces "DevRel Case Studies" in navigation and labels (URL unchanged); inline explanations for loopers, Notebook AI, AI orchestrators, BIR invoice guideline.
 - **Start here** (`/start-here/`): the basics, programs by audience, and a glossary; linked from the Our Story menu and the footer.
+- **Site search:** a search button at the right of the header on every page opens a keyword search over docs/search-index.json (built by scripts/build_search.py from every page). Ranks titles, headings, descriptions, and text; corrects typos against the site vocabulary; understands synonyms and provinces; pins top answers for common intents (events, volunteer, start a chapter, sponsor). Open with the button, / or Ctrl/Cmd+K; arrows and Enter to choose; Esc to close. Inline script pinned by CSP; no third parties. Not in the single-file build.
+- **Hackathon guide lessons:** What worked well (10) and What to improve next time (10) in Best practices; lessons folded into the 3-month plan (master tracker, early partner outreach, written budget approval), the readiness checklist (security access list, meals, one email primer, awards list), lead duties, the DEVCON HQ card (chapter and HQ alignment), and two new risks.
 - **All YouTube embeds autoplay muted** (autoplay=1, mute=1, playsinline=1, allow="autoplay"), sitewide, privacy-enhanced player.
 - **Video:** the NEXUS final-stop video (YouTube, privacy-enhanced embed, muted autoplay, centered) on the Mindanao AI Caravan case study; "DEVCON at 16: Inspiring the Next Generation with DEVCON Kids" (SdVjWd_4MUE) on the DEVCON Kids page, and "Why Sui partnered with DEVCON Philippines" (JDe6L8peLvk) plus a second video, "Sui and DEVCON Philippines launch Build Beyond" (F4I92at8iF0), on the Sui case study; a DEVCON TikTok embed is ready in scripts/sui_tiktok_embed.html for when that video is public and embeddable (CSP frame-src already allows www.tiktok.com); CSP allows only youtube-nocookie.com and youtube.com frames.
 - **Section rhythm:** location pages alternate section backgrounds; related pairs (events + snapshots, stats + awards, quality over quantity + volunteer-led line) share a band; 72 px desktop / 48 px mobile spacing.
