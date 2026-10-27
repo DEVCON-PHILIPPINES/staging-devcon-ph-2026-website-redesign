@@ -1,12 +1,8 @@
 name: Deploy production (Cloudflare Pages)
 
 # prod-: https://prod-devcon-ph-2026-website-redesign.pages.dev
-# Runs when a release PR (staging -> main) or hotfix merges. An HQ leader must approve the `production` environment.
+# Manual only since production moved to Vercel (see deploy-production-vercel.yml). An HQ leader must approve the `production` environment.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "docs/**"
   workflow_dispatch:
 
 permissions:

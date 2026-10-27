@@ -1,0 +1,2359 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": null,
+  "buildCommand": null,
+  "outputDirectory": "docs",
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'none'; base-uri 'none'; object-src 'none'; upgrade-insecure-requests"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ],
+      "has": [
+        {
+          "type": "host",
+          "value": "(.+\\.vercel\\.app|new\\.devcon\\.ph)"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    },
+    {
+      "source": "/url-map.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/17years",
+      "destination": "/about/17years/",
+      "statusCode": 301
+    },
+    {
+      "source": "/17years/",
+      "destination": "/about/17years/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai/",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-code-camps",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-code-camps/",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency-masterclass",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency-masterclass/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bacolod",
+      "destination": "/locations/bacolod/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bacolod/",
+      "destination": "/locations/bacolod/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bohol",
+      "destination": "/locations/bohol/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bohol/",
+      "destination": "/locations/bohol/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-kit",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-kit/",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bukidnon",
+      "destination": "/locations/bukidnon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bukidnon/",
+      "destination": "/locations/bukidnon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cagayandeoro",
+      "destination": "/locations/cagayandeoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cagayandeoro/",
+      "destination": "/locations/cagayandeoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus/",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-events-guidelines",
+      "destination": "/playbook/campus-events-guidelines/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-events-guidelines/",
+      "destination": "/playbook/campus-events-guidelines/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-ai-physical-computing-educators",
+      "destination": "/case-studies/ai-physical-computing-educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-ai-physical-computing-educators/",
+      "destination": "/case-studies/ai-physical-computing-educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-campus-devcon-summit",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-campus-devcon-summit/",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-devcon-for-educators",
+      "destination": "/case-studies/devcon-for-educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-devcon-for-educators/",
+      "destination": "/case-studies/devcon-for-educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-hermes-agentic-code-camp",
+      "destination": "/case-studies/hermes-agentic-code-camp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-hermes-agentic-code-camp/",
+      "destination": "/case-studies/hermes-agentic-code-camp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-hour-of-ai",
+      "destination": "/case-studies/hour-of-ai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-hour-of-ai/",
+      "destination": "/case-studies/hour-of-ai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-icp",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-icp/",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-microbit",
+      "destination": "/case-studies/microbit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-microbit/",
+      "destination": "/case-studies/microbit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-mindanao-ai-caravan",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-mindanao-ai-caravan/",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-pro-summit",
+      "destination": "/case-studies/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-pro-summit/",
+      "destination": "/case-studies/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-sui",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-sui/",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-zoho-creator",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-zoho-creator/",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cebu",
+      "destination": "/locations/cebu/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cebu/",
+      "destination": "/locations/cebu/",
+      "statusCode": 301
+    },
+    {
+      "source": "/chapters",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/chapters/",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/child-protection-policy",
+      "destination": "/playbook/child-protection-policy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/child-protection-policy/",
+      "destination": "/playbook/child-protection-policy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/code-of-conduct-for-national-and-chapter-officers-and-volunteers",
+      "destination": "/playbook/code-of-conduct/",
+      "statusCode": 301
+    },
+    {
+      "source": "/code-of-conduct-for-national-and-chapter-officers-and-volunteers/",
+      "destination": "/playbook/code-of-conduct/",
+      "statusCode": 301
+    },
+    {
+      "source": "/crest",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/crest/",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/davao",
+      "destination": "/locations/davao/",
+      "statusCode": 301
+    },
+    {
+      "source": "/davao/",
+      "destination": "/locations/davao/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dctx",
+      "destination": "/programs/dctx/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dctx/",
+      "destination": "/programs/dctx/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-kids",
+      "destination": "/programs/kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-kids/",
+      "destination": "/programs/kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devrel-case-studies",
+      "destination": "/case-studies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devrel-case-studies/",
+      "destination": "/case-studies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/educators",
+      "destination": "/programs/educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/educators/",
+      "destination": "/programs/educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/iligan",
+      "destination": "/locations/iligan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/iligan/",
+      "destination": "/locations/iligan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/iloilo",
+      "destination": "/locations/iloilo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/iloilo/",
+      "destination": "/locations/iloilo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jumpstart-internships",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jumpstart-internships/",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/laguna",
+      "destination": "/locations/laguna/",
+      "statusCode": 301
+    },
+    {
+      "source": "/laguna/",
+      "destination": "/locations/laguna/",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership/",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/legazpi",
+      "destination": "/locations/legazpi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/legazpi/",
+      "destination": "/locations/legazpi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/manila",
+      "destination": "/locations/manila/",
+      "statusCode": 301
+    },
+    {
+      "source": "/manila/",
+      "destination": "/locations/manila/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pampanga",
+      "destination": "/locations/pampanga/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pampanga/",
+      "destination": "/locations/pampanga/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pro-summit",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pro-summit/",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sheisdevcon",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sheisdevcon/",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/standard-privacy-and-safespace-consent",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/standard-privacy-and-safespace-consent/",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacloban",
+      "destination": "/locations/tacloban/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacloban/",
+      "destination": "/locations/tacloban/",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteers-guide",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteers-guide/",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/she-2026",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/she-2026/",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/she",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/she/",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/she-is-devcon",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/she-is-devcon/",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/women-in-tech",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/women-in-tech/",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campussummit2023",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campussummit2023/",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-summit-2023",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-summit-2023/",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-summit",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-summit/",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/prosummit2023",
+      "destination": "/case-studies/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/prosummit2023/",
+      "destination": "/case-studies/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pro-summit-2023",
+      "destination": "/case-studies/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pro-summit-2023/",
+      "destination": "/case-studies/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/prosummit",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/prosummit/",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/summergiveaway2023",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/summergiveaway2023/",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/summer-giveaway-2023",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/summer-giveaway-2023/",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zoho-creator",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zoho-creator/",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/agentic-training",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/agentic-training/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/agentic-training-for-leaders",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/agentic-training-for-leaders/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/ai-fluency-masterclass",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/ai-fluency-masterclass/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/agentic-training",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/agentic-training/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency-agentic-training",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency-agentic-training/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency-for-builders",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency-for-builders/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/masterclass",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/masterclass/",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sui-and-devcon-philippines-launch-build-beyond-developer-events-and-code-camps",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sui-and-devcon-philippines-launch-build-beyond-developer-events-and-code-camps/",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sui",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sui/",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/build-beyond",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/build-beyond/",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2025-news-isla-camp-ph-and-devcon-ph-renew-partnership-for-nationwide-smart-contracts-code-camps-and-emerging-technologies-education-in-2025",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2025-news-isla-camp-ph-and-devcon-ph-renew-partnership-for-nationwide-smart-contracts-code-camps-and-emerging-technologies-education-in-2025/",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/icp",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/icp/",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/isla-camp",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/isla-camp/",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2025-news-inaugural-ai-engineering-scholarship-launched-by-ai-academy-ph-in-collaboration-with-devcon-apper-cloudschool-indigo-research",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2025-news-inaugural-ai-engineering-scholarship-launched-by-ai-academy-ph-in-collaboration-with-devcon-apper-cloudschool-indigo-research/",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-scholarship",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-scholarship/",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-scholarships",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-scholarships/",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/scholarship",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/scholarship/",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/scholarships",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/scholarships/",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/certification",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/certification/",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hour-of-ai",
+      "destination": "/case-studies/hour-of-ai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hour-of-ai/",
+      "destination": "/case-studies/hour-of-ai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hour-of-code",
+      "destination": "/case-studies/hour-of-ai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hour-of-code/",
+      "destination": "/case-studies/hour-of-ai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/kids",
+      "destination": "/programs/kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/kids/",
+      "destination": "/programs/kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mindanao-ai-caravan",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mindanao-ai-caravan/",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-angat",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-angat/",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/caravan",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/caravan/",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/code-camps",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/code-camps/",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/codecamps",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/codecamps/",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/barangay-ai",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/barangay-ai/",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/events",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/events/",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/event",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/event/",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calendar",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calendar/",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/register",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/register/",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/casestudies",
+      "destination": "/case-studies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/casestudies/",
+      "destination": "/case-studies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devrel",
+      "destination": "/case-studies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devrel/",
+      "destination": "/case-studies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sponsors",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sponsors/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sponsor",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sponsor/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partners",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partners/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partnership",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partnership/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partnerships",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partnerships/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/donate",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/donate/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/leaders",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/leaders/",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/team",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/team/",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/officers",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/officers/",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/board",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/board/",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/our-team",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/our-team/",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/our-story",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/our-story/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/history",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/history/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/organization",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/organization/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-organization",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-organization/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/who-we-are",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/who-we-are/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/regional-chapters",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/regional-chapters/",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/chapter",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/chapter/",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/start-a-chapter",
+      "destination": "/invite/",
+      "statusCode": 301
+    },
+    {
+      "source": "/start-a-chapter/",
+      "destination": "/invite/",
+      "statusCode": 301
+    },
+    {
+      "source": "/invite-devcon",
+      "destination": "/invite/",
+      "statusCode": 301
+    },
+    {
+      "source": "/invite-devcon/",
+      "destination": "/invite/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internship",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internship/",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internships",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internships/",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jumpstart",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jumpstart/",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ojt",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ojt/",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteers",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteers/",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/be-a-volunteer",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/be-a-volunteer/",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteering-basics",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteering-basics/",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/code-of-conduct",
+      "destination": "/playbook/code-of-conduct/",
+      "statusCode": 301
+    },
+    {
+      "source": "/code-of-conduct/",
+      "destination": "/playbook/code-of-conduct/",
+      "statusCode": 301
+    },
+    {
+      "source": "/anti-harassment-policy",
+      "destination": "/playbook/code-of-conduct/",
+      "statusCode": 301
+    },
+    {
+      "source": "/anti-harassment-policy/",
+      "destination": "/playbook/code-of-conduct/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/safe-space",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/safe-space/",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/event-participation-guidelines",
+      "destination": "/playbook/campus-events-guidelines/",
+      "statusCode": 301
+    },
+    {
+      "source": "/event-participation-guidelines/",
+      "destination": "/playbook/campus-events-guidelines/",
+      "statusCode": 301
+    },
+    {
+      "source": "/child-protection",
+      "destination": "/playbook/child-protection-policy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/child-protection/",
+      "destination": "/playbook/child-protection-policy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand/",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brandkit",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brandkit/",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logos",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logos/",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/media-kit",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/media-kit/",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/press-kit",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/press-kit/",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/our-initiatives",
+      "destination": "/programs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/our-initiatives/",
+      "destination": "/programs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/initiatives",
+      "destination": "/programs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/initiatives/",
+      "destination": "/programs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/program",
+      "destination": "/programs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/program/",
+      "destination": "/programs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/summit",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/summit/",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-summit",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-summit/",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-devcon",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-devcon/",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sheisdevcon-2026",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sheisdevcon-2026/",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cdo",
+      "destination": "/locations/cagayandeoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cdo/",
+      "destination": "/locations/cagayandeoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cagayan-de-oro",
+      "destination": "/locations/cagayandeoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cagayan-de-oro/",
+      "destination": "/locations/cagayandeoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/metro-manila",
+      "destination": "/locations/manila/",
+      "statusCode": 301
+    },
+    {
+      "source": "/metro-manila/",
+      "destination": "/locations/manila/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ncr",
+      "destination": "/locations/manila/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ncr/",
+      "destination": "/locations/manila/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/devconadmin",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/devconadmin/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-kit/feed",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-kit/feed/",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/17years.html",
+      "destination": "/about/17years/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about/17years",
+      "destination": "/about/17years/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai.html",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/ai-scholarships",
+      "destination": "/programs/ai-scholarships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-code-camps.html",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/ai-code-camps",
+      "destination": "/programs/ai-code-camps/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-fluency-masterclass.html",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/ai-fluency-agentic-training",
+      "destination": "/programs/ai-fluency-agentic-training/",
+      "statusCode": 301
+    },
+    {
+      "source": "/attend.html",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/attend",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bacolod.html",
+      "destination": "/locations/bacolod/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/bacolod",
+      "destination": "/locations/bacolod/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bohol.html",
+      "destination": "/locations/bohol/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/bohol",
+      "destination": "/locations/bohol/",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-kit.html",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook/brand-kit",
+      "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bukidnon.html",
+      "destination": "/locations/bukidnon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/bukidnon",
+      "destination": "/locations/bukidnon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cagayandeoro.html",
+      "destination": "/locations/cagayandeoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/cagayandeoro",
+      "destination": "/locations/cagayandeoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus.html",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/campus",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-events-guidelines.html",
+      "destination": "/playbook/campus-events-guidelines/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook/campus-events-guidelines",
+      "destination": "/playbook/campus-events-guidelines/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-ai-physical-computing-educators.html",
+      "destination": "/case-studies/ai-physical-computing-educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/ai-physical-computing-educators",
+      "destination": "/case-studies/ai-physical-computing-educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-campus-devcon-summit.html",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/campus-devcon-summit",
+      "destination": "/case-studies/campus-devcon-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-devcon-for-educators.html",
+      "destination": "/case-studies/devcon-for-educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/devcon-for-educators",
+      "destination": "/case-studies/devcon-for-educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-hermes-agentic-code-camp.html",
+      "destination": "/case-studies/hermes-agentic-code-camp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/hermes-agentic-code-camp",
+      "destination": "/case-studies/hermes-agentic-code-camp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-hour-of-ai.html",
+      "destination": "/case-studies/hour-of-ai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/hour-of-ai",
+      "destination": "/case-studies/hour-of-ai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-icp.html",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/icp",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-microbit.html",
+      "destination": "/case-studies/microbit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/microbit",
+      "destination": "/case-studies/microbit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-mindanao-ai-caravan.html",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/mindanao-ai-caravan",
+      "destination": "/case-studies/mindanao-ai-caravan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-pro-summit.html",
+      "destination": "/case-studies/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/pro-summit",
+      "destination": "/case-studies/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-sui.html",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/sui",
+      "destination": "/case-studies/sui/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-zoho-creator.html",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/zoho-creator",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cebu.html",
+      "destination": "/locations/cebu/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/cebu",
+      "destination": "/locations/cebu/",
+      "statusCode": 301
+    },
+    {
+      "source": "/chapters.html",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/child-protection-policy.html",
+      "destination": "/playbook/child-protection-policy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook/child-protection-policy",
+      "destination": "/playbook/child-protection-policy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/code-of-conduct-for-national-and-chapter-officers-and-volunteers.html",
+      "destination": "/playbook/code-of-conduct/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook/code-of-conduct",
+      "destination": "/playbook/code-of-conduct/",
+      "statusCode": 301
+    },
+    {
+      "source": "/crest.html",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/crest",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/davao.html",
+      "destination": "/locations/davao/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/davao",
+      "destination": "/locations/davao/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dctx.html",
+      "destination": "/programs/dctx/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/dctx",
+      "destination": "/programs/dctx/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-kids.html",
+      "destination": "/programs/kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/kids",
+      "destination": "/programs/kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devrel-case-studies.html",
+      "destination": "/case-studies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/case-studies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/educators.html",
+      "destination": "/programs/educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/educators",
+      "destination": "/programs/educators/",
+      "statusCode": 301
+    },
+    {
+      "source": "/iligan.html",
+      "destination": "/locations/iligan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/iligan",
+      "destination": "/locations/iligan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/iloilo.html",
+      "destination": "/locations/iloilo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/iloilo",
+      "destination": "/locations/iloilo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/invite.html",
+      "destination": "/invite/",
+      "statusCode": 301
+    },
+    {
+      "source": "/invite",
+      "destination": "/invite/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jumpstart-internships.html",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/jumpstart-internships",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/laguna.html",
+      "destination": "/locations/laguna/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/laguna",
+      "destination": "/locations/laguna/",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership.html",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about/leadership",
+      "destination": "/about/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/legazpi.html",
+      "destination": "/locations/legazpi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/legazpi",
+      "destination": "/locations/legazpi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/manila.html",
+      "destination": "/locations/manila/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/manila",
+      "destination": "/locations/manila/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pampanga.html",
+      "destination": "/locations/pampanga/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/pampanga",
+      "destination": "/locations/pampanga/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partner.html",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partner",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook.html",
+      "destination": "/playbook/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook",
+      "destination": "/playbook/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pro-summit.html",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/pro-summit",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs.html",
+      "destination": "/programs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs",
+      "destination": "/programs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sheisdevcon.html",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/programs/sheisdevcon",
+      "destination": "/programs/sheisdevcon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/standard-privacy-and-safespace-consent.html",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook/privacy-and-safe-space",
+      "destination": "/playbook/privacy-and-safe-space/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacloban.html",
+      "destination": "/locations/tacloban/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/tacloban",
+      "destination": "/locations/tacloban/",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteers-guide.html",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook/volunteers-guide",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook/masterclass-hackathon-guide",
+      "destination": "/playbook/hackathon-best-practice/",
+      "statusCode": 301
+    },
+    {
+      "source": "/playbook/masterclass-hackathon-guide/",
+      "destination": "/playbook/hackathon-best-practice/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campusambassador",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campusambassador/",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-devcon-summit-2024-tech-nexus",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/campus-devcon-summit-2024-tech-nexus/",
+      "destination": "/programs/campus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-climate-resilience-innovation-summit-2025",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-climate-resilience-innovation-summit-2025/",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news-2024-devcon-crest-philippines-launches-initiatives-for-climate-tech-innovation",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news-2024-devcon-crest-philippines-launches-initiatives-for-climate-tech-innovation/",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/climate-bayanihan-devcon-dost-dlsu-climate-innovator-workshop-2025",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/climate-bayanihan-devcon-dost-dlsu-climate-innovator-workshop-2025/",
+      "destination": "/programs/crest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/professional-developers-and-geeks-gather-for-devcon-pro-summit-on-october-20",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/professional-developers-and-geeks-gather-for-devcon-pro-summit-on-october-20/",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/summit2021",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/summit2021/",
+      "destination": "/programs/pro-summit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news-2024-devcon-philippines-and-icp-hub-philippines-partner-for-nationwide-smart-contract-code-camps",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news-2024-devcon-philippines-and-icp-hub-philippines-partner-for-nationwide-smart-contract-code-camps/",
+      "destination": "/case-studies/icp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-kids-inventory",
+      "destination": "/programs/kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-kids-inventory/",
+      "destination": "/programs/kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/support",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/support/",
+      "destination": "/partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/careers",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/careers/",
+      "destination": "/programs/jumpstart-internships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plus",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plus/",
+      "destination": "/attend/",
+      "statusCode": 301
+    },
+    {
+      "source": "/test-practice",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/test-practice/",
+      "destination": "/locations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-beta-v2-2",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-beta-v2-2/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/homepage-beta-v2",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/homepage-beta-v2/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hello-world",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hello-world/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/luzon",
+      "destination": "/locations/#luzon",
+      "statusCode": 301
+    },
+    {
+      "source": "/luzon/",
+      "destination": "/locations/#luzon",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/luzon",
+      "destination": "/locations/#luzon",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/luzon/",
+      "destination": "/locations/#luzon",
+      "statusCode": 301
+    },
+    {
+      "source": "/visayas",
+      "destination": "/locations/#visayas",
+      "statusCode": 301
+    },
+    {
+      "source": "/visayas/",
+      "destination": "/locations/#visayas",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/visayas",
+      "destination": "/locations/#visayas",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/visayas/",
+      "destination": "/locations/#visayas",
+      "statusCode": 301
+    },
+    {
+      "source": "/mindanao",
+      "destination": "/locations/#mindanao",
+      "statusCode": 301
+    },
+    {
+      "source": "/mindanao/",
+      "destination": "/locations/#mindanao",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/mindanao",
+      "destination": "/locations/#mindanao",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/mindanao/",
+      "destination": "/locations/#mindanao",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/.well-known/security.txt",
+      "destination": "/security.txt"
+    }
+  ]
+}
