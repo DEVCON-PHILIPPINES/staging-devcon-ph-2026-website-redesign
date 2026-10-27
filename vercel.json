@@ -1605,6 +1605,46 @@
       "statusCode": 301
     },
     {
+      "source": "/category/news",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/news/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/about",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/about/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/summer-giveaway",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/summer-giveaway/",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
       "source": "/17years.html",
       "destination": "/about/17years/",
       "statusCode": 301
