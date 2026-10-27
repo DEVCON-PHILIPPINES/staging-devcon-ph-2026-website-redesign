@@ -63,6 +63,8 @@ REDIRECTS = {
     'cdo': 'cagayandeoro', 'cagayan-de-oro': 'cagayandeoro', 'metro-manila': 'manila', 'ncr': 'manila',
     # WordPress leftovers
     'news': '', 'blog': '', 'home': '', 'feed': '', 'comments/feed': '', 'author/devconadmin': '', 'brand-kit/feed': 'brand-kit',
+    # WordPress category and tag archives listed in the old sitemap
+    'category/news': '', 'category/uncategorized': '', 'tag/about': 'about', 'tag/summer-giveaway': 'case-study-zoho-creator',
 }
 
 import posixpath
