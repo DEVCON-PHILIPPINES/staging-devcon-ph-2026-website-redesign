@@ -1645,6 +1645,16 @@
       "statusCode": 301
     },
     {
+      "source": "/devcon-summit-2022-volunteers",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/devcon-summit-2022-volunteers/",
+      "destination": "/playbook/volunteers-guide/",
+      "statusCode": 301
+    },
+    {
       "source": "/17years.html",
       "destination": "/about/17years/",
       "statusCode": 301
