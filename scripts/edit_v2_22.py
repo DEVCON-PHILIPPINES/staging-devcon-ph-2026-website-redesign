@@ -1,7 +1,7 @@
 # v2.22: region anchors, volunteer-capacity message, working preview image URL, large chapter names
 import re, glob, os, json
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-PROD = 'https://prod-devcon-ph-2026-website-redesign.pages.dev'
+PROD = 'https://devcon.ph'
 FILES = [f for f in glob.glob('docs/**/*.html', recursive=True)] + glob.glob('combined/*.html')
 CITIES = {'bacolod': 'Bacolod', 'bohol': 'Bohol', 'bukidnon': 'Bukidnon', 'cagayandeoro': 'Cagayan de Oro', 'cebu': 'Cebu', 'davao': 'Davao', 'iligan': 'Iligan',
           'iloilo': 'Iloilo', 'laguna': 'Laguna', 'legazpi': 'Legazpi', 'manila': 'Manila', 'pampanga': 'Pampanga', 'tacloban': 'Tacloban'}
