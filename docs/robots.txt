@@ -38,4 +38,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://stg-2026.devcon.ph/sitemap.xml
+Sitemap: https://devcon.ph/sitemap.xml
