@@ -21,7 +21,7 @@ def _page_html(mode):
     def M(f):
         if mode == 'docs': return f'media/{f}'
         path = f'docs/{SLUG_PATH}/media/{f}'
-        if f.endswith(('.mp4','.webm')): return f'https://prod-devcon-ph-2026-website-redesign.pages.dev/{SLUG_PATH}/media/{f}'
+        if f.endswith(('.mp4','.webm')): return f'https://devcon.ph/{SLUG_PATH}/media/{f}'
         mime = 'image/webp' if f.endswith('.webp') else 'image/jpeg'
         return f'data:{mime};base64,' + _b.b64encode(open(path, 'rb').read()).decode()
     def fig(f, alt, cap=None, cls='', credit=None):
