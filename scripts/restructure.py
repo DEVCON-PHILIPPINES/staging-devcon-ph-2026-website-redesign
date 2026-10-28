@@ -65,6 +65,8 @@ REDIRECTS = {
     'news': '', 'blog': '', 'home': '', 'feed': '', 'comments/feed': '', 'author/devconadmin': '', 'brand-kit/feed': 'brand-kit',
     # WordPress category and tag archives listed in the old sitemap
     'category/news': '', 'category/uncategorized': '', 'tag/about': 'about', 'tag/summer-giveaway': 'case-study-zoho-creator',
+    # Old WordPress page still in Google's index but not in its sitemap
+    'devcon-summit-2022-volunteers': 'volunteers-guide',
 }
 
 import posixpath
