@@ -1,6 +1,6 @@
 # DEVCON.PH 2026 Website Redesign: Product Requirements Document
 
-**Status:** Live on GitHub Pages · **Current version:** v2.31 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
+**Status:** Live on GitHub Pages · **Current version:** v2.32 · Workflow: staging → production · **Owner:** DEVCON Philippines National Office (Communications)
 **Source of truth:** this file. When the site, a brief, or a chat thread disagrees with this PRD, update this PRD first, then the site.
 
 ---
@@ -178,6 +178,7 @@ A rule-based chat at the lower right of every page. Devie is a **basic FAQ bot, 
 - **Start here** (`/start-here/`): the basics, programs by audience, and a glossary; linked from the Our Story menu and the footer.
 - **Partner Success Stories hub:** "How DEVCON HQ programs and local chapters work together" before the case studies: a five-step flow (Partner, DEVCON HQ, local chapters, builders, results) and three cards (DEVCON HQ national office, local chapters, together).
 - **Mindanao AI Fluency story** (`/case-studies/mindanao-ai-fluency-hackathons/`): "Frontier AI, where Mindanao&#8217;s builders are": one-day AI Fluency Masterclass and hackathon in Bukidnon (Central Mindanao University, DEVCON Bukidnon with DOST Northern Mindanao), Iligan (MSU-IIT, final caravan stop), and Davao (SUBAY, University of Mindanao, October 14, 2026, 3-hour build); three autoplay muted videos (O4mID3-PvA8, V3wjPqwkbBg, 1N98Cw_rFHQ); builds Halal Keeps, BantayBuild, champion team; no NMBLR logos. Second card on Partner Success Stories.
+- **Chapter pages (v2.32):** the 9 active chapters show one note, "How chapters grow: Built by volunteers, earned through impact" (led by local volunteer officers, earned through regular free programs, reviewed yearly, growing as leaders step up), and a short closing line; the old capacity caveats are gone. Volunteer communities Bohol, Cagayan de Oro, and Tacloban no longer show the 2025 impact report row, the numbers, or testimonies (photos kept); Bacolod already had none.
 - **Link preview images (v2.31):** homepage and default image og-devcon-17.jpg (scripts/build_og_default.py) with the subtitle "The country&#8217;s largest volunteer tech community. / 13 locations nationwide."; every other page gets docs/og/<page>.jpg (scripts/build_og_pages.py), cut from its most representative content photo (or, for stories, its card photo) with the DEVCON 17 logo; the crop is face-aware (OpenCV), keeping every head with headroom, or the top row of heads when a group is too tall to fit; 1200 x 630, under 300 KB; og:image:alt is the page title. Pages without a usable photo, and the Partner Success Stories hub, keep the default. Re-run scripts/build_og_pages.py after adding or rebuilding a page.
 - **Naming:** "Partner Success Stories" (was Partner Results, before that DevRel Case Studies) in navigation, breadcrumbs, titles, search, and Devie; URL stays /case-studies/.
 - **Header:** on desktop (1001 px and up) the menu is right-aligned and the search button sits 14 px after Volunteer, pill-shaped like it; at 1000 px and below, search sits beside the menu button.
