@@ -93,7 +93,7 @@ for f in glob.glob('docs/**/*.html', recursive=True) + [COMBINED]:
         d = os.path.relpath('docs', os.path.dirname(f)).replace('\\', '/'); pre = '' if d == '.' else d + '/'
     href = '#/start-here' if pre is None else pre + 'start-here/'
     if 'New to DEVCON? Start here' not in s:
-        s = re.sub(r'(<div class="nav-dd-panel nav-dd-panel--sm" id="dd-story">\s*)', lambda m: m.group(1) + f'<a href="{href}" style="--c:#71B405"><b>New to DEVCON? Start here</b><span>Chapters, DEVCON+, volunteering, and programs</span></a>\n          ', s, count=1)
+        s = re.sub(r'(<div class="nav-dd-panel nav-dd-panel--sm" id="dd-story">\s*)', lambda m: m.group(1) + f'<a class="dd-head" href="{href}" style="--c:#71B405"><b>New to DEVCON? Start here</b><span>Chapters, DEVCON+, volunteering, and programs</span></a>\n          ', s, count=1)
         s = re.sub(r'(<li><a href="[^"]*">Attend an event</a></li>)', lambda m: f'<li><a href="{href}">New to DEVCON? Start here</a></li>' + m.group(1), s, count=1)
     if s != o: open(f, 'w', encoding='utf-8').write(s); n += 1
 m = json.load(open('docs/url-map.json'))

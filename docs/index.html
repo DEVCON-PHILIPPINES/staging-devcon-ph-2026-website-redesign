@@ -732,7 +732,7 @@ section[id],article[id],aside[id],div[id]{scroll-margin-top:84px}
 .nav-dd:hover .nav-dd-trigger .dd-chev,.nav-dd:focus-within .nav-dd-trigger .dd-chev,.nav-dd.is-open .nav-dd-trigger .dd-chev{transform:rotate(180deg)}
 .nav-dd-toggle{display:none}
 .nav-dd-panel{position:absolute;top:calc(100% + 14px);left:50%;width:min(720px,92vw);padding:18px;border-radius:20px;
-  background:rgba(11,8,64,.97);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);
+  background:#0b0840;backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);
   box-shadow:0 30px 60px -20px rgba(0,0,0,.7);opacity:0;visibility:hidden;transform:translate(-50%,8px);
   transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s;z-index:120}
 .nav-dd-panel::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px} /* hover bridge */
@@ -2215,7 +2215,7 @@ html.vol-lock,html.vol-lock body{overflow:hidden}
         <a class="nav-dd-trigger" href="about/" data-nav="story" aria-haspopup="true" aria-expanded="false" aria-controls="dd-story">Our Story<svg class="dd-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
         <button class="nav-dd-toggle" type="button" aria-expanded="false" aria-controls="dd-story"><span class="sr-only">Show Our Story</span><svg class="dd-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="nav-dd-panel nav-dd-panel--sm" id="dd-story">
-          <a href="start-here/" style="--c:#71B405"><b>New to DEVCON? Start here</b><span>Chapters, DEVCON+, volunteering, and programs</span></a>
+          <a class="dd-head" href="start-here/" style="--c:#71B405"><b>New to DEVCON? Start here</b><span>Chapters, DEVCON+, volunteering, and programs</span></a>
           <ul class="dd-simple" role="list">
             <li><a href="about/" style="--c:#F2C500"><b>About DEVCON Philippines</b><span>Our history: a volunteer non-profit since 2009</span></a></li>
             <li><a href="about/17years/" style="--c:#EA641D"><b>DEVCON 17 manifesto</b><span>Engineering an AI-Ready Nation</span></a></li>
