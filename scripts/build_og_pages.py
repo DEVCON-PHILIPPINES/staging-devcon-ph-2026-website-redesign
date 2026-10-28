@@ -57,14 +57,57 @@ def pick(f, p=None):
         if os.path.isfile(t): return Image.open(t).convert('RGB'), t, 'card photo'
     return None
 
+
+def faces(im):
+    """Face boxes (x, y, w, h) in source pixels, found with OpenCV's Haar cascades."""
+    try:
+        import cv2, numpy as np
+    except Exception:
+        return []
+    s = min(1.0, 1600 / max(im.size)); small = im.resize((int(im.width * s), int(im.height * s))) if s < 1 else im
+    g = cv2.cvtColor(np.array(small.convert('RGB')), cv2.COLOR_RGB2GRAY); g = cv2.equalizeHist(g)
+    found = []
+    for name in ('haarcascade_frontalface_alt2.xml', 'haarcascade_frontalface_default.xml'):
+        c = cv2.CascadeClassifier(cv2.data.haarcascades + name)
+        mn = max(14, int(min(g.shape) * 0.018))
+        for (x, y, w, h) in c.detectMultiScale(g, scaleFactor=1.08, minNeighbors=6, minSize=(mn, mn)):
+            found.append((x / s, y / s, w / s, h / s))
+    # merge overlaps
+    out = []
+    for f in sorted(found, key=lambda b: -b[2]):
+        if not any(abs(f[0] - o[0]) < o[2] * .5 and abs(f[1] - o[1]) < o[3] * .5 for o in out): out.append(f)
+    return out
+
+def focus_crop(im):
+    """Crop to 1200x630 without cutting heads: keep every face (with headroom) or, if they cannot all fit, the top row of heads."""
+    W0, H0 = im.size; R = W / H; fs = faces(im)
+    if W0 / H0 >= R:  # wider than the card: full height, slide sideways
+        cw = int(H0 * R); ch = H0
+        if fs:
+            l = min(f[0] for f in fs); r = max(f[0] + f[2] for f in fs); cx = (l + r) / 2
+        else:
+            cx = W0 / 2
+        x0 = int(max(0, min(W0 - cw, cx - cw / 2))); y0 = 0
+    else:  # taller than the card: full width, slide vertically
+        cw = W0; ch = int(W0 / R); x0 = 0
+        if fs:
+            fh = sorted(f[3] for f in fs)[len(fs) // 2]
+            top = max(0, min(f[1] for f in fs) - fh * .9); bottom = max(f[1] + f[3] for f in fs) + fh * .5
+            if bottom - top <= ch: y0 = top - (ch - (bottom - top)) * .35
+            else: y0 = top
+        else:
+            y0 = (H0 - ch) * .3
+        y0 = int(max(0, min(H0 - ch, y0)))
+    return im.crop((x0, y0, x0 + cw, y0 + ch)).resize((W, H), Image.LANCZOS), len(fs)
+
 def compose(im):
     global LOGO
     if LOGO is None:
         lg = dflt.logo_cut(); lh = 46; LOGO = lg.resize((int(lg.width * lh / lg.height), lh), Image.LANCZOS)
-    c = ImageOps.fit(im, (W, H), Image.LANCZOS, centering=(0.5, 0.42))
+    c, _n = focus_crop(im)
     shade = Image.new('L', (W, H), 0); sd = ImageDraw.Draw(shade)
     for y in range(H):
-        t = max(0, (y - H * .55) / (H * .45)); sd.line([(0, y), (W, y)], fill=int(200 * t ** 1.4))
+        t = max(0, (y - H * .70) / (H * .30)); sd.line([(0, y), (W, y)], fill=int(190 * t ** 1.6))
     c = Image.composite(Image.new('RGB', (W, H), (8, 6, 36)), c, shade)
     c.paste(LOGO, (40, H - LOGO.height - 34), LOGO)
     return c
