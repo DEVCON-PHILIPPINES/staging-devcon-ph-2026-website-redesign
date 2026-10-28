@@ -4,6 +4,8 @@ Newest first. Times are Philippine Standard Time (PHT).
 
 | Version | Updated | Changes |
 |---|---|---|
+| v2.32 | Oct 28, 2026, 10:07 PM PHT | Chapter pages: concise growth note; volunteer communities simplified |
+| v2.31 | Oct 28, 2026, 10:01 PM PHT | Link preview images: new homepage subtitle, per-page images |
 | v2.30 | Oct 26, 2026, 11:04 PM PHT | Mindanao AI Fluency Masterclass and Hackathons story |
 | v2.29 | Oct 26, 2026, 10:54 PM PHT | Partner Success Stories; right-aligned menu with search |
 | v2.28 | Oct 26, 2026, 10:33 PM PHT | Site search; hackathon guide lessons from past runs |
