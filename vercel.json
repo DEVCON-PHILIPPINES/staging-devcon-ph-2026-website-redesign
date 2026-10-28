@@ -11,7 +11,7 @@
       "headers": [
         {
           "key": "Strict-Transport-Security",
-          "value": "max-age=31536000; includeSubDomains"
+          "value": "max-age=31536000"
         },
         {
           "key": "X-Frame-Options",
@@ -1602,6 +1602,46 @@
     {
       "source": "/brand-kit/feed/",
       "destination": "/playbook/brand-kit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/news",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/news/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/about",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/about/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/summer-giveaway",
+      "destination": "/case-studies/zoho-creator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/summer-giveaway/",
+      "destination": "/case-studies/zoho-creator/",
       "statusCode": 301
     },
     {
